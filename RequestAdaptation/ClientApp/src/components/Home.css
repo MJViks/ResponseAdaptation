@@ -49,6 +49,7 @@ h1 {
     transform: translateZ(0);
 }
 
+
 .parallax__layer--back {
     transform: translateZ(-2px) scale(2);
 }
