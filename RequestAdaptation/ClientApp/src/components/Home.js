@@ -11,11 +11,23 @@ export class Home extends Component {
                 <div className="parallax__layer parallax__layer--deep">
                  
                 </div>
-                <div className="parallax__layer--back">
+                <div className="parallax__layer parallax__layer--back">
+                    <img className="img-logo" src="https://i.ibb.co/ngxjPCX/image.png" alt="Logo"></img>
+                    <div className="text-flex">
                     <p>Lanta Group</p>
                     <h1>Заявка на адаптацию</h1>
+                        </div>
+                    </div>
+                <div className="form-home parallax__layer parallax__layer--base">
+                    <h2>Создание заявки</h2>
+                    <div className="form-submit">
+                        <input placeholder="Название организации" className="input-mini"></input>
+                        <input placeholder="Название программного продукта" className="input-mini"></input>
+                        <input type="email" className="input-mini"></input>
+                        <input className="input-max"></input>
+                        <button className="input-button">Отправить</button>
+                    </div>
                 </div>
-                <div className="a1 parallax__layer parallax__layer--base">Ghbdtn</div>
             </div>
         );
     }

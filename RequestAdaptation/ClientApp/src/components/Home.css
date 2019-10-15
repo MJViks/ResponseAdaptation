@@ -1,25 +1,65 @@
 ﻿p {
     font-family: 'Roboto', sans-serif;
     color: white;
-    font-size: 15pt;
-    color: white;
+    font-size: 2vw;
     text-align: right;
-    margin-right: 2vw;
+    margin-right: 3vw;
     text-shadow: 2px 2px 5px black;
-    line-height: 190px;
+    margin-bottom: -4vh;
 }
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 150pt;
+    font-size: 18vw;
     color: white;
     text-align: right;
     margin-right: 1vw;
     text-shadow: 2px 2px 5px black;
-    line-height: 190px;
+    line-height: 12vw;
+    margin-bottom: 7vh;
 }
-.a1 {
+.img-logo {
+    width: 17vh;
+    position: fixed;
+    top: -30vh;
+    left: calc(50vw - 17vh/2);
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3vh;
+    color: white;
+    text-align: left;
+    margin-left: 2vh;
+    text-shadow: 2px 2px 5px black;
+    margin-top: 16px;
+}
+.text-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     height: 100vh;
-    color:black;
+    margin-top: -35vh;
+}
+.form-home {
+    height: 100vh;
+    color: black;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+   
+}
+.input-mini {
+    margin: 20px;
+    height: 45px;
+    font-size: 20pt;
+}
+.input-max {
+    margin: 20px;
+}
+.input-button {
+    font-family: 'Roboto', sans-serif;
 }
 .parallax {
     perspective: 1px;
@@ -55,15 +95,13 @@ h1 {
 }
 
 .parallax__layer--back {
-    bottom: 0;
     top: 0;
     margin-top: 45vh;
-    display:flex;
     transform: translateZ(-1px) scale(2);
 }
 
 @media (max-width: 600px) {
-    .parallax__layer--deep {
+    body {
         margin-top: -50px;
     }
     h1 {
@@ -72,5 +110,26 @@ h1 {
         color: white;
         text-align: center;
         
+    }
+    p {
+        font-size: 15pt;
+        text-align: center;
+        margin-bottom: -3vh;
+    }
+}
+
+@media (max-width: 320px) {
+    body{
+        margin-top: -50px;
+    }
+
+    h1 {
+        font-size: 40pt;
+        text-align: center;
+    }
+    p {
+        font-size: 15pt;
+        text-align: center;
+        margin-bottom: -3vh;
     }
 }
