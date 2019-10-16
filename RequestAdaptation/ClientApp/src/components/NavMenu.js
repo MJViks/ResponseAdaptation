@@ -16,7 +16,8 @@ export class NavMenu extends Component {
         let classNameNav = (this.state.classNav === "nav close-nav") ? "nav open-nav" : "nav close-nav";
         this.setState({ classNav: classNameNav });
         document.getElementById('body').style.marginLeft = (this.state.classNav === "nav close-nav") ? '-320px' : '0px';
-        document.getElementById('body').style.paddingRight = (this.state.classNav === "nav close-nav") ? '320px' : '0px';
+
+        document.getElementById('body').style.paddingRight = (this.state.classNav === "nav close-nav") ? '300px' : '0px';
         
     }
 

@@ -40,30 +40,67 @@ h2 {
     margin-top: -35vh;
 }
 .form-home {
-    height: 100vh;
+    min-height: 100vh;
     color: black;
 }
+
+
 
 .form-submit {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-   
+    height: 93vh;
+    padding: 20px;
+    align-items: center;
 }
 .input-mini {
-    margin: 20px;
+    font-family: 'Roboto', sans-serif;
     height: 45px;
     font-size: 20pt;
+    border-radius: 5px;
+    padding: 30px;
+    border-style: none;
+    max-width: 500px;
+    min-width: 300px;
 }
 .input-max {
-    margin: 20px;
+    border-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20pt;
+    height: 40vh;
+    max-width: 500px;
+    border-radius: 5px;
+    min-width: 370px;
+}
+.submit-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    max-width: 700px;
 }
 .input-button {
+    border-style: none;
+    color: white;
+    background-color: #409FFF;
+    border-radius: 5px;
     font-family: 'Roboto', sans-serif;
+    width: 300px;
+    font-size: 20pt;
+    margin: 10px 30px;
+
+    min-height: 80px;
+}
+.parallax__group {
+    position: relative;
+    height: 100vh;
+    transform-style: preserve-3d;
+    z-index: 2;
 }
 .parallax {
     perspective: 1px;
-    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     width: 100%;
@@ -85,22 +122,25 @@ h2 {
 }
 
 .parallax__layer--deep {
-    top: 0;
+    top: -50vh;
     transform: translateZ(-2px) scale(3);
     background-image: url(./img/mountains.jpg);
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
     margin: -7px;
+    height: 100vh
 }
 
 .parallax__layer--back {
     top: 0;
     margin-top: 45vh;
     transform: translateZ(-1px) scale(2);
+    height: 100vh
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 765px) {
     body {
         margin-top: -50px;
     }
