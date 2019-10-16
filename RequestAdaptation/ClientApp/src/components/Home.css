@@ -40,7 +40,7 @@ h2 {
     margin-top: -35vh;
 }
 .form-home {
-    min-height: 100vh;
+    height: 101vh;
     color: black;
 }
 
@@ -90,7 +90,6 @@ h2 {
     width: 300px;
     font-size: 20pt;
     margin: 10px 30px;
-
     min-height: 80px;
 }
 .parallax__group {
@@ -99,12 +98,8 @@ h2 {
     transform-style: preserve-3d;
     z-index: 2;
 }
-.parallax {
-    perspective: 1px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 100%;
-}
+
+
 
 .parallax__layer {
     position: absolute;

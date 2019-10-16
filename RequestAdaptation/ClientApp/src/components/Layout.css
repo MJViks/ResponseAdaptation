@@ -1,0 +1,33 @@
+﻿body {
+}
+.parallax {
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+    .parallax::-webkit-scrollbar {
+      
+        background-color: transparent;
+        filter: opacity(100%);
+        height: 100%;
+    }
+    .parallax::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background: #f0f2f5;
+        border: solid 2px #CCCCCC;
+    }
+    .parallax:hover::-webkit-scrollbar-thumb {
+        background: #6a7d9b;
+    }
+        html {
+        overflow-y: hidden;
+    }
+@media (max-width: 765px) {
+    .parallax::-webkit-scrollbar {
+    width: 0px;
+    }
+    }
+

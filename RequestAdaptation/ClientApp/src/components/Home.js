@@ -4,7 +4,7 @@ export class Home extends Component {
     displayName = Home.name
     render() {
         return (
-            <div onClick={this.backHide} className="parallax__group">
+            <div className="parallax__group">
                 <div id="home-first-deep-back" className="home-first-deep-back parallax__layer parallax__layer--deep">
                  
                 </div>

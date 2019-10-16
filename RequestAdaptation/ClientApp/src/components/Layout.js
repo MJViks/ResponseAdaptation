@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavMenu } from './NavMenu';
 import { Foter } from './Foter';
-import './Home.css';
+import './Layout.css';
 
 export class Layout extends Component {
     displayName = Layout.name
@@ -9,11 +9,16 @@ export class Layout extends Component {
  
 
     backHide = () => {
-        if (document.getElementById('layout').scrollTop > 850) 
-          
-            document.getElementsByClassName('home-first-deep-back')[0].style.display = 'none'
+        let st = document.getElementById('layout').scrollTop,
+            ct = document.body.clientHeight,
+            HFDB = document.getElementsByClassName('home-first-deep-back');
+        for (let i = 0; i < HFDB.length; i++) {
+            if (st > ct)
+
+                HFDB[i].display = 'none'
             else
-            document.getElementsByClassName('home-first-deep-back')[0].style.display = ''
+                HFDB[i].style.display = ''
+        }
         
     }
 
