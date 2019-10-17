@@ -53,34 +53,49 @@ h2 {
     height: 93vh;
     padding: 20px;
     align-items: center;
+    width: 100%;
 }
 .input-mini {
     font-family: 'Roboto', sans-serif;
     height: 45px;
-    font-size: 20pt;
+    font-size: 18pt;
     border-radius: 5px;
     padding: 30px;
     border-style: none;
-    max-width: 500px;
-    min-width: 300px;
+    width: 100%;
+    min-width: 370px;
 }
 .input-max {
     border-style: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 20pt;
+    font-size: 18pt;
     height: 40vh;
-    max-width: 500px;
     border-radius: 5px;
     min-width: 370px;
-}
-.submit-block {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    max-width: 700px;
 }
+    .input-max::-webkit-scrollbar{
+        background-color: white;
+        width: 8px;
+    }
+    .input-max::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #808080;
+        border: solid 2px white;
+    }
+
+
+body {
+    margin-bottom: -500px;
+}
+    .submit-block {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+        max-width: 700px;
+    }
 .input-button {
     border-style: none;
     color: white;
@@ -94,7 +109,7 @@ h2 {
 }
 .parallax__group {
     position: relative;
-    height: 100vh;
+    height: 200vh;
     transform-style: preserve-3d;
     z-index: 2;
 }
@@ -123,8 +138,7 @@ h2 {
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: -7px;
-    height: 100vh
+    height: 125vh
 }
 
 .parallax__layer--back {

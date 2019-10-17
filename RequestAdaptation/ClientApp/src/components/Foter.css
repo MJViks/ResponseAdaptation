@@ -3,8 +3,10 @@
 .foter {
     display: flex;
     color: white;
-    height: 70vh;
+    height: 50vh;
     background-color: #1B1C20;
+
+  
 }
 
 
@@ -12,7 +14,7 @@
     height: 50vh;
     position: relative;
     transform-style: preserve-3d;
-    top: 50vh;
+    top:0;
     z-index:1;
 }
 .parallax__layer-foter {

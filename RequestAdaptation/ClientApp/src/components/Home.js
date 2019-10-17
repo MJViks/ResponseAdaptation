@@ -5,7 +5,7 @@ export class Home extends Component {
     render() {
         return (
             <div className="parallax__group">
-                <div id="home-first-deep-back" className="home-first-deep-back parallax__layer parallax__layer--deep">
+                <div className="home-deep-back parallax__layer parallax__layer--deep">
                  
                 </div>
                 <div className="parallax__layer parallax__layer--back">

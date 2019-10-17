@@ -8,7 +8,7 @@ export class Foter extends Component {
     render() {
         return (
             <div className="parallax__group-foter">
-                <div className="foter paparallax__layer-foter parallax__layer--deep-foter">
+                <div className="foter home-deep-back paparallax__layer-foter parallax__layer--deep-foter">
                 </div>
             </div>
         );
