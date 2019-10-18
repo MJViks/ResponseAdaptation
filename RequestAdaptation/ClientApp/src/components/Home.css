@@ -20,7 +20,7 @@ h1 {
 .img-logo {
     width: 17vh;
     position: fixed;
-    top: -30vh;
+    top: -20vh;
     left: calc(50vw - 17vh/2);
 }
 h2 {
@@ -58,20 +58,21 @@ h2 {
 .input-mini {
     font-family: 'Roboto', sans-serif;
     height: 45px;
-    font-size: 18pt;
+    font-size: 16pt;
     border-radius: 5px;
     padding: 30px;
     border-style: none;
     width: 100%;
-    min-width: 370px;
+    min-width: 320px
 }
 .input-max {
+    padding: 30px;
     border-style: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 18pt;
+    font-size: 16pt;
     height: 40vh;
     border-radius: 5px;
-    min-width: 370px;
+    min-width: 320px;
     width: 100%;
 }
     .input-max::-webkit-scrollbar{
@@ -85,9 +86,7 @@ h2 {
     }
 
 
-body {
-    margin-bottom: -500px;
-}
+
     .submit-block {
         width: 100%;
         display: flex;
@@ -115,7 +114,6 @@ body {
 }
 
 
-
 .parallax__layer {
     position: absolute;
     right: 0;
@@ -132,13 +130,13 @@ body {
 }
 
 .parallax__layer--deep {
-    top: -50vh;
+    top: 0;
     transform: translateZ(-2px) scale(3);
     background-image: url(./img/mountains.jpg);
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 125vh
+    height: 100vh
 }
 
 .parallax__layer--back {
@@ -171,6 +169,9 @@ body {
     body{
         margin-top: -50px;
     }
+    .form-home{
+        
+    }
 
     h1 {
         font-size: 40pt;
@@ -181,4 +182,15 @@ body {
         text-align: center;
         margin-bottom: -3vh;
     }
+}
+@media (max-height: 800px) {
+    .input-max{
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+    .input-mini {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
 }

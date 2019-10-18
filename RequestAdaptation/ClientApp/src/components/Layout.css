@@ -21,9 +21,7 @@
     .parallax:hover::-webkit-scrollbar-thumb {
         background: #6a7d9b;
     }
-        body {
-            margin-bottom: -500px;
-    }
+
 @media (max-width: 765px) {
     .parallax::-webkit-scrollbar {
     width: 0px;

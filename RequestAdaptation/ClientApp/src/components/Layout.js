@@ -7,16 +7,18 @@ export class Layout extends Component {
     displayName = Layout.name
     backHide = () => {
         let st = document.getElementById('layout').scrollTop,
-            ct = document.body.clientHeight,
+            sb = document.getElementById('layout').scrollTop + document.body.clientHeight,
             HFDB = document.getElementsByClassName('home-deep-back');
         for (let i = 0; i < HFDB.length; i++) {
-            let dotOfEnd = HFDB[i].getBoundingClientRect().x + ct 
-            if (st >= dotOfEnd) {
-                HFDB[i].style.display = 'none'
-            }
+            let dotOfEnd = HFDB[i].getBoundingClientRect().x + HFDB[i].offsetHeight,
+                dotOfStart = HFDB[i].getBoundingClientRect().x
+            if (st > dotOfEnd || sb < dotOfStart) 
+                HFDB[i].style.visibility = 'hidden'
             else
-                HFDB[i].style.display = ''
+                HFDB[i].style.visibility = ''
+            
         }
+        
     }
 
   render() {

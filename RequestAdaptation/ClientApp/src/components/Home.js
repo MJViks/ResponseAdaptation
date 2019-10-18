@@ -19,11 +19,11 @@ export class Home extends Component {
                     <h2>Создание заявки</h2>
                     <div className="form-submit">
              
-                        <input placeholder="Название организации" className="input-mini"></input>
-                        <input placeholder="Название программного продукта" className="input-mini"></input>
-                        <input type="email" className="input-mini"></input>
-                        <textarea className="input-max"></textarea>
-                        <div className="submit-block">
+                        <input placeholder="Организация" className="input-mini"></input>
+                        <input placeholder="Программа" className="input-mini"></input>
+                        <input type="email" placeholder="E-mail" className="input-mini"></input>
+                        <textarea className="input-max" placeholder="Текст заявки. Укажите свои поженалия и предпочтения."></textarea>
+                        <div className="submit-block" >
                             <img src="https://i.ibb.co/6mHQmxM/16-10-2019-100410.png"/>
                             <button className="input-button">Отправить</button>
                        
