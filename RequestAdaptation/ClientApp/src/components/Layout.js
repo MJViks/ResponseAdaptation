@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavMenu } from './NavMenu';
 import { Foter } from './Foter';
-import './Layout.css';
+import './css/Layout.css';
 
 export class Layout extends Component {
     displayName = Layout.name

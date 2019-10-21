@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import './Foter.css';
+import './css/Foter.css';
 export class Foter extends Component {
     displayName = Foter.name
 
@@ -14,7 +14,7 @@ export class Foter extends Component {
                         <div className="foter-contect-content">
                             <div className="foter-contect-content-text-text">
                                 <p className="foter-contect-content-text">E-mail:<br />info@lanta-group.ru</p>
-                                <p className="foter-contect-content-text">Телефон:<br />+7 (495) 649 6339</p>
+                                <p className="foter-contect-content-text">Телефон:<br />+7 495 649-63-39</p>
                             </div>
                             <div className="foter-contect-content-text-img">
                                 <img src="https://i.ibb.co/ngxjPCX/image.png" className="foter-contect-content-logo" />

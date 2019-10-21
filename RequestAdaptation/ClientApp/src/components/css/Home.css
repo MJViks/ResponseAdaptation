@@ -17,6 +17,13 @@ h1 {
     line-height: 12vw;
     margin-bottom: 7vh;
 }
+.label{
+    text-align: left;
+    width: 720px;
+    margin-bottom: 5px;
+    margin-top: 7px;
+    font-size: 12pt;
+}
 .img-logo {
     width: 17vh;
     position: fixed;
@@ -62,7 +69,7 @@ h2 {
     border-radius: 5px;
     padding: 30px;
     border-style: none;
-    width: 100%;
+    width: 720px;
     min-width: 320px
 }
 .input-max {
@@ -73,7 +80,7 @@ h2 {
     height: 40vh;
     border-radius: 5px;
     min-width: 320px;
-    width: 100%;
+    width: 720px;
 }
     .input-max::-webkit-scrollbar{
         background-color: white;
@@ -132,7 +139,7 @@ h2 {
 .parallax__layer--deep {
     top: 0;
     transform: translateZ(-2px) scale(3);
-    background-image: url(./img/mountains.jpg);
+    background-image: url(../img/mountains.jpg);
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
@@ -162,6 +169,17 @@ h2 {
         font-size: 15pt;
         text-align: center;
         margin-bottom: -3vh;
+    }
+    .input-max {
+        width: 100%;
+    }
+    .input-mini {
+        width: 100%;
+    }
+    .label {
+        
+        width: 100%;
+      
     }
 }
 

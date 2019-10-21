@@ -51,7 +51,7 @@
 }
 .foter-contect-content-logo{
     
-    height: 25%;
+    height: 60px;
 
     margin: 5px
 }
@@ -61,6 +61,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     height: 50%;
+    width: 100%;
+   padding-right: 40px;
 }
 .foter-contect-content-qr {
     width: 35%;
@@ -75,17 +77,18 @@
     height: 50%;
     width: 100%;
 }
-.foter-map-adres{
+.foter-map-adres {
     margin: 0;
     text-align: justify;
     font-size: 14pt;
-    margin-left: 30px;
+    width: 260px;
+    margin-left: 60px;
     margin-top: 20px;
 }
 .foter-map-content {
     display: flex;
     align-content: center;
-    height: 380px;
+    height: 100%;
     width: 100%
 }
 .foter-map-text {
@@ -133,6 +136,9 @@
 
        
     }
+    .foter-contect-content-logo {
+        height: 40%;
+    }
     .foter-contect-content-qr{
         display: none;
     }
@@ -142,12 +148,14 @@
     }
     .foter-map-text{
         flex-direction: column;
+       
     }
     .foter-map-content {
-        margin-top: 30px;
+    margin-top: 70px;
     }
-    .foter-map-adres{
+    .foter-map-adres {
         margin: 0;
+        width: 100%;
     }
     .foter-age {
        display:none;
@@ -159,6 +167,8 @@
    
     
 }
-@media (max-width: 320px){
-    
+@media (max-width: 1341px) {
+    .foter-map-text {
+        margin-bottom: 20px;
+    }
 }
