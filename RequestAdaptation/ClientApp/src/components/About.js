@@ -15,23 +15,24 @@ export class About extends Component {
                         <h1 className="hd1_ab">О нас</h1>
                     </div>
                 </div>
-                <div className="form-home parallax__layer parallax__layer--base">
-                    <h2>Создание отзыва</h2>
-                    <div className="form-submit">
-                        <p className="label">Название организации</p>
-                        <input className="input-mini"></input>
-                        <p className="label">Название программного продукта</p>
-                        <input className="input-mini"></input>
-                        <p className="label">E-mail</p>
-                        <input type="email" placeholder="@" className="input-mini"></input>
-                        <p className="label">Текст отзыва</p>
-                        <textarea className="input-max" placeholder="Опишите свои впечатления после работы с нами."></textarea>
-                        <div className="submit-block" >
-                            <img src="https://i.ibb.co/6mHQmxM/16-10-2019-100410.png" />
-                            <button className="input-button">Отправить</button>
-
-                        </div>
-                    </div>
+                <div className="form-about parallax__layer parallax__layer--base">
+                    <img className="about-img" src="https://i.ibb.co/sqhxnsS/about-img.png" alt="about-img"/>
+                    <p className="about-text">Компания LantaGroup является молодой, динамично развивающейся компанией,
+                        специализирующейся в области системной интеграции. Объединив
+                        высококвалифицированных специалистов, обладающих глубокими знаниями и
+                        многолетним опытом реализации проектов в области информационных
+                        технологий, Компания LantaGroup предоставляет комплекс услуг
+                        системной интеграции, необходимых при создания IТ-инфраструктуры
+                        для компаний любого масштаба.
+                    </p>
+                    <p className="about-text">
+                        Основными направлениями деятельности компании являются: системная
+                        интеграция,
+                        внедрение инфраструктурных решений, проектирование и создание
+                        корпоративных сетей и инженерных систем; аутсорсинг технической
+                        поддержки ИТ-инфраструктуры; решения в области центров обработки
+                        данных, систем хранения и вычислительных комплексов.
+                    </p>
                 </div>
             </div>
         );

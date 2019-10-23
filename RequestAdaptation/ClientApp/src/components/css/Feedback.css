@@ -9,3 +9,7 @@
     background-size: cover;
     height: 100vh;
 }
+.form-feedback {
+    height: 101vh;
+    color: black;
+}

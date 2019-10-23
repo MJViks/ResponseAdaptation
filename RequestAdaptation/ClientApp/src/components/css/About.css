@@ -19,12 +19,44 @@
     line-height: 12vw;
     margin-bottom: 7vh;
 }
+.about-text {
+    text-align: justify;
+    margin: auto;
+    text-indent: 2em;
+    text-shadow: none;
+    font-size: 16pt;
+    width: 600px;
+}
+.form-about {
+    display: flex;
+    flex-direction: column;
+
+}
+.about-img {
+    height: 155px;
+    width: 600px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 @media (max-width: 765px) {
     .hd1_ab {
         font-size: 50pt;
         color: white;
         text-align: center;
+    }
+    .about-text {
+        font-size: 12pt;
+        width: 100%;
+    }
+    .form-about {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .about-img {
+        height: 155px;
+        width: 100%;
     }
 }
 

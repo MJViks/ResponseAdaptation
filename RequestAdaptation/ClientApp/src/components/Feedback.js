@@ -15,7 +15,7 @@ export class Feedback extends Component {
                         <h1 className="hd1">Отзывы</h1>
                     </div>
                 </div>
-                <div className="form-home parallax__layer parallax__layer--base">
+                <div className="form-feedback parallax__layer parallax__layer--base">
                     <h2>Создание отзыва</h2>
                     <div className="form-submit">
                         <p className="label">Название организации</p>
