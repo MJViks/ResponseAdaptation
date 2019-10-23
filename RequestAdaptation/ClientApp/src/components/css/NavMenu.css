@@ -7,20 +7,19 @@
  */
 body {
     transition-property: padding, margin;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     transition-timing-function: ease;
-
 }
 
 .nav {
-  position: fixed;
-    background-color: #C4C4C4;
+    position: fixed;
+    background-color: #c4c4c4;
     right: 0px;
     top: 0px;
     margin: 0;
     border: 0;
     text-transform: none;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     transition-timing-function: ease;
     height: 100vh;
     z-index: 4;
@@ -28,23 +27,24 @@ body {
 
     .nav.open-nav {
         width: 320px;
-        
     }
+
     .nav.close-nav {
         width: 0px;
     }
 
     .nav h3 {
         color: black;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-size: 12pt;
         margin-left: 20px;
     }
+
 .nav-link {
     color: black;
     display: block;
     cursor: pointer;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 40pt;
     line-height: 45px;
     margin-top: 35px;
@@ -52,6 +52,7 @@ body {
     text-decoration: none;
     margin-left: 20px;
 }
+
     .nav-link.ch {
         color: #23527c;
         text-decoration: none;
@@ -75,8 +76,8 @@ body {
     border: 0;
     margin: 0;
     overflow: visible;
-   right: 25px;
-   top: 25px;
+    right: 25px;
+    top: 25px;
 }
 
     .hamburger:hover {
@@ -106,7 +107,9 @@ body {
     margin-top: -2px;
 }
 
-    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
         width: 40px;
         height: 4px;
         background-color: #000;
@@ -117,7 +120,8 @@ body {
         transition-timing-function: ease;
     }
 
-        .hamburger-inner::before, .hamburger-inner::after {
+        .hamburger-inner::before,
+        .hamburger-inner::after {
             content: "";
             display: block;
         }
@@ -129,8 +133,6 @@ body {
         .hamburger-inner::after {
             bottom: -10px;
         }
-
-
 
 /*
    * Spin
@@ -165,4 +167,3 @@ body {
         transform: rotate(-90deg);
         transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
-

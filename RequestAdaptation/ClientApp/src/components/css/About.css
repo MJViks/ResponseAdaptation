@@ -1,0 +1,36 @@
+﻿body {
+}
+.parallax__layer--deep_About {
+    top: 0;
+    transform: translateZ(-2px) scale(3);
+    background-image: url(../img/About_img.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.hd1_ab {
+    font-family: "Playfair Display", serif;
+    font-size: 18vw;
+    color: white;
+    text-align: right;
+    margin-right: 1vw;
+    text-shadow: 3px 3px 2px black;
+    line-height: 12vw;
+    margin-bottom: 7vh;
+}
+
+@media (max-width: 765px) {
+    .hd1_ab {
+        font-size: 50pt;
+        color: white;
+        text-align: center;
+    }
+}
+
+@media (max-width: 320px) {
+   .hd1_ab {
+        font-size: 40pt;
+        text-align: center;
+    }
+}

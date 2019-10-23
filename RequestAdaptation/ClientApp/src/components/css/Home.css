@@ -1,5 +1,5 @@
 ﻿p {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: white;
     font-size: 2vw;
     text-align: right;
@@ -7,8 +7,9 @@
     text-shadow: 2px 2px 5px black;
     margin-bottom: -4vh;
 }
-h1 {
-    font-family: 'Playfair Display', serif;
+
+.hd1 {
+    font-family: "Playfair Display", serif;
     font-size: 18vw;
     color: white;
     text-align: right;
@@ -17,21 +18,25 @@ h1 {
     line-height: 12vw;
     margin-bottom: 7vh;
 }
-.label{
-    text-align: left;
-    width: 720px;
-    margin-bottom: 5px;
-    margin-top: 7px;
-    font-size: 12pt;
-}
+  
+
+    .label {
+        text-align: left;
+        width: 720px;
+        margin-bottom: 5px;
+        margin-top: 7px;
+        font-size: 12pt;
+    }
+
 .img-logo {
     width: 17vh;
     position: fixed;
     top: -20vh;
-    left: calc(50vw - 17vh/2);
+    left: calc(50vw - 17vh / 2);
 }
+
 h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 3vh;
     color: white;
     text-align: left;
@@ -39,6 +44,7 @@ h2 {
     text-shadow: 2px 2px 5px black;
     margin-top: 16px;
 }
+
 .text-flex {
     display: flex;
     flex-direction: column;
@@ -46,12 +52,11 @@ h2 {
     height: 100vh;
     margin-top: -35vh;
 }
+
 .form-home {
     height: 101vh;
     color: black;
 }
-
-
 
 .form-submit {
     display: flex;
@@ -62,64 +67,67 @@ h2 {
     align-items: center;
     width: 100%;
 }
+
 .input-mini {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     height: 45px;
     font-size: 16pt;
     border-radius: 5px;
     padding: 30px;
     border-style: none;
     width: 720px;
-    min-width: 320px
+    min-width: 320px;
 }
+
 .input-max {
     padding: 30px;
     border-style: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16pt;
     height: 40vh;
     border-radius: 5px;
     min-width: 320px;
     width: 720px;
 }
-    .input-max::-webkit-scrollbar{
+
+    .input-max::-webkit-scrollbar {
         background-color: white;
         width: 8px;
     }
+
     .input-max::-webkit-scrollbar-thumb {
         border-radius: 4px;
         background-color: #808080;
         border: solid 2px white;
     }
 
+.submit-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    max-width: 700px;
+}
 
-
-    .submit-block {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
-        max-width: 700px;
-    }
 .input-button {
     border-style: none;
     color: white;
-    background-color: #409FFF;
+    background-color: #409fff;
     border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     width: 300px;
     font-size: 20pt;
     margin: 10px 30px;
     min-height: 80px;
 }
+
 .parallax__group {
     position: relative;
     height: 200vh;
     transform-style: preserve-3d;
     z-index: 2;
 }
-
 
 .parallax__layer {
     position: absolute;
@@ -132,83 +140,86 @@ h2 {
     transform: translateZ(0);
     top: 100vh;
     background-color: #313338;
-    box-shadow: 0 0 10px rgba(4,4,0,4);
+    box-shadow: 0 0 10px rgba(4, 4, 0, 4);
     border: 10px;
 }
 
-.parallax__layer--deep {
+.parallax__layer--deep_Home {
     top: 0;
     transform: translateZ(-2px) scale(3);
     background-image: url(../img/mountains.jpg);
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh
+    height: 100vh;
 }
 
 .parallax__layer--back {
     top: 0;
     margin-top: 45vh;
     transform: translateZ(-1px) scale(2);
-    height: 100vh
+    height: 100vh;
 }
-
 
 @media (max-width: 765px) {
     body {
         margin-top: -50px;
     }
-    h1 {
-      
+
+    .hd1 {
         font-size: 50pt;
         color: white;
         text-align: center;
-        
     }
+
     p {
         font-size: 15pt;
         text-align: center;
         margin-bottom: -3vh;
     }
+
     .input-max {
         width: 100%;
     }
+
     .input-mini {
         width: 100%;
     }
+
     .label {
-        
         width: 100%;
-      
+
     }
 }
 
 @media (max-width: 320px) {
-    body{
+    body {
         margin-top: -50px;
     }
-    .form-home{
-        
+
+    .form-home {
     }
 
-    h1 {
+    .hd1 {
         font-size: 40pt;
         text-align: center;
     }
+
     p {
         font-size: 15pt;
         text-align: center;
         margin-bottom: -3vh;
     }
 }
+
 @media (max-height: 800px) {
-    .input-max{
+    .input-max {
         margin-top: 2px;
         margin-bottom: 10px;
     }
+
     .input-mini {
         margin-top: 2px;
         margin-bottom: 2px;
     }
-
 }

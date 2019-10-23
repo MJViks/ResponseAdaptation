@@ -1,6 +1,6 @@
 ﻿body {
-
 }
+
 .parallax {
     perspective: 1px;
     overflow-x: hidden;
@@ -10,21 +10,22 @@
 }
 
     .parallax::-webkit-scrollbar {
-      width: 6px;
+        width: 6px;
         background-color: transparent;
     }
+
     .parallax::-webkit-scrollbar-thumb {
         border-radius: 4px;
         background: #f0f2f5;
-        border: solid 2px #CCCCCC;
+        border: solid 2px #cccccc;
     }
+
     .parallax:hover::-webkit-scrollbar-thumb {
         background: #6a7d9b;
     }
 
 @media (max-width: 765px) {
     .parallax::-webkit-scrollbar {
-    width: 0px;
+        width: 0px;
     }
-    }
-
+}

@@ -1,2 +1,11 @@
 ﻿body {
 }
+.parallax__layer--deep_Feedback {
+    top: 0;
+    transform: translateZ(-2px) scale(3);
+    background-image: url(../img/mountains_2.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}

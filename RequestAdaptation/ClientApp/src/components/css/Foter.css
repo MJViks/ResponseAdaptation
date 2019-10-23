@@ -1,6 +1,7 @@
 ﻿body {
-    background-color: #1B1C20;
+    background-color: #1b1c20;
 }
+
 .parallax__group-foter {
     height: 80vh;
     position: relative;
@@ -16,45 +17,49 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-
 }
+
 .foter-contact {
     display: flex;
     flex-direction: column;
     width: 60vh;
 }
+
 .foter-h {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     color: white;
     font-size: 40pt;
+    text-shadow: 2px 3px 2px black;
 }
+
 .foter-contect-content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-around;
-    height:100%;
-  
+    height: 100%;
 }
+
 .foter-map {
     display: flex;
-    width:60vh;
+    width: 60vh;
     flex-direction: column;
     justify-content: start;
 }
 
 .foter-contect-content-text {
     text-align: left;
- width: 50%;
+    width: 50%;
     font-size: 16pt;
     margin: 0;
+    text-shadow: none;
 }
-.foter-contect-content-logo{
-    
-    height: 60px;
 
-    margin: 5px
+.foter-contect-content-logo {
+    height: 60px;
+    margin: 5px;
 }
+
 .foter-contect-content-text-img {
     display: flex;
     align-content: space-around;
@@ -62,12 +67,14 @@
     flex-wrap: wrap;
     height: 50%;
     width: 100%;
-   padding-right: 40px;
+    padding-right: 40px;
 }
+
 .foter-contect-content-qr {
     width: 35%;
-    margin: 5px
+    margin: 5px;
 }
+
 .foter-contect-content-text-text {
     display: flex;
     justify-content: space-between;
@@ -77,6 +84,7 @@
     height: 50%;
     width: 100%;
 }
+
 .foter-map-adres {
     margin: 0;
     text-align: justify;
@@ -84,13 +92,16 @@
     width: 260px;
     margin-left: 60px;
     margin-top: 20px;
+    text-shadow: none;
 }
+
 .foter-map-content {
     display: flex;
     align-content: center;
     height: 100%;
-    width: 100%
+    width: 100%;
 }
+
 .foter-map-text {
     display: flex;
     flex-direction: row;
@@ -99,6 +110,7 @@
     width: 100%;
     justify-content: space-between;
 }
+
 .foter-age {
     position: fixed;
     top: auto;
@@ -106,7 +118,9 @@
     font-weight: 100;
     font-size: 11pt;
     text-align: left;
+    text-shadow: none;
 }
+
 .foter-age-big {
     top: auto;
     bottom: 0;
@@ -120,53 +134,57 @@
     .foter-h {
         text-align: center;
     }
+
     .foter-contect-content {
         margin-top: 20px;
     }
-    .foter-contect-content-text-text {
 
+    .foter-contect-content-text-text {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .foter-contect-content-text-img {
         flex-direction: column;
         margin-top: 20px;
         width: 100%;
-
-       
     }
+
     .foter-contect-content-logo {
         height: 40%;
     }
-    .foter-contect-content-qr{
+
+    .foter-contect-content-qr {
         display: none;
     }
-    .foter-map{
+
+    .foter-map {
         margin-top: -90px;
         padding-bottom: 20px;
     }
-    .foter-map-text{
+
+    .foter-map-text {
         flex-direction: column;
-       
     }
+
     .foter-map-content {
-    margin-top: 70px;
+        margin-top: 70px;
     }
+
     .foter-map-adres {
         margin: 0;
         width: 100%;
     }
+
     .foter-age {
-       display:none;
+        display: none;
     }
+
     .foter-age-big {
         display: flex;
-        
     }
-   
-    
 }
+
 @media (max-width: 1341px) {
     .foter-map-text {
         margin-bottom: 20px;
