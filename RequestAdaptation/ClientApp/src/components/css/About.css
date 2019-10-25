@@ -30,7 +30,6 @@
 .form-about {
     display: flex;
     flex-direction: column;
-
 }
 .about-img {
     height: 155px;
