@@ -41,7 +41,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -67,7 +67,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -88,7 +88,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -114,7 +114,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -141,7 +141,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -162,7 +162,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -188,7 +188,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -215,7 +215,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -236,7 +236,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -259,7 +259,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -284,7 +284,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -305,7 +305,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -329,7 +329,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -354,7 +354,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -375,7 +375,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -398,7 +398,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -422,7 +422,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -443,7 +443,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -465,7 +465,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -488,7 +488,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -509,7 +509,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -533,7 +533,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -558,7 +558,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {
@@ -579,7 +579,7 @@ namespace RequestAdaptationFatClient
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {

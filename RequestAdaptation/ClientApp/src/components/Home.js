@@ -32,7 +32,7 @@ export class Home extends Component {
                             placeholder="Укажите свои поженалия и предпочтения."
                         ></textarea>
                         <div className="submit-block">
-                            <img src="https://i.ibb.co/6mHQmxM/16-10-2019-100410.png" />
+                            <div className="g-recaptcha " data-sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"></div>
                             <button className="input-button">Отправить</button>
                         </div>
                     </div>

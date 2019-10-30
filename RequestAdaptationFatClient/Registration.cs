@@ -4,21 +4,17 @@ namespace RequestAdaptationFatClient
 {
     class Registration
     {
-
-        public static string error; // переменная текста ошибки
-        public static string head; // переменная заголовка ошибки
         public static bool ok; // закочена регистрация или нет
 
-        public static void RegNewClient(string login, string pass, string checkpass, string SurnClient, string NameClient, string MidnClient, string MobileNum) // регистрация нового пользователя
+        public static String RegNewUser(string login, string pass, string checkpass, string RoleName) // регистрация нового пользователя
         {
-            if (login == "" || pass == "" || checkpass == "" || SurnClient == "" || NameClient == "" || MobileNum == "") // если одно из поле пустое
+            try
             {
-                error = "Поля не заполнены!\nЗаполните все поля!";
-                head = "Заполните поля!";
-            }
+            if (login == "" || pass == "" || checkpass == "" || RoleName == "") // если одно из поле пустое
+                return "Поля не заполнены!\nЗаполните все поля!";
             else
             {
-                if (pass != checkpass) { error = "Пароли не совпадают"; head = "Пароли неверны!"; } // проверка на соответствие полей паролей
+                if (pass != checkpass) return "Пароли не совпадают"; // проверка на соответствие полей паролей
                 else
                 {
                     Int32 logchk; // проверка на уникальность логина
@@ -26,36 +22,42 @@ namespace RequestAdaptationFatClient
                                 "where " +
                                 "(Login ='" + login + "')"; // возвращает запрос на проверку занятости введенного логина                    
                     logchk = Convert.ToInt32(DBActions.execScalar());
-                    if (logchk == 1)
-                    {
-                        error = "Данный логин уже существует!";
-                        head = "Существующий логин!";
-                    }
+                    if (logchk >= 1) return "Данный логин уже существует!";
                     else
                     {
-                        try
-                        {
+                        
+                            if (login.Length > 4 && pass.Length > 4) { 
                             logchk = 0;
-                            DBActions.User_Insert(login, Crypt.GetHash(pass), 6); // добавляет зарегестрированные данные в бд 
+                                
+                            DBActions.User_Insert(login, Crypt.GetHash(pass), RoleName); // добавляет зарегестрированные данные в бд 
                             DBActions.cmd.CommandType = System.Data.CommandType.Text;
                             DBActions.cmd.CommandText = "select id_user from [user] where [login] = '" + login + "'";
                             logchk = Convert.ToInt32(DBActions.execScalar());
                             if (logchk != 0)
                             {
-                                DBActions.client_Insert(SurnClient, NameClient, MidnClient, MobileNum, 1, logchk);
-                                error = "Регистрация успешно завершена!";
-                                head = "Успешно!";
+                                //DBActions.client_Insert(SurnClient, NameClient, MidnClient, MobileNum, 1, logchk); //Добавление клиента к аккаунту
                                 ok = true;
+                                return "Регистрация успешно завершена!";
+                             
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            error = ex.ToString();
-                        }
+                            return "Возникла непредвиденная ошибка!";
+                            }
+                            else
+                                return "Логин/пароль слишком короткий!\nМинимум 5 символов!";
+                       
 
                     }
 
                 }
+            }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString();
+            }
+            finally
+            {
+                DBConnect.sql.Close();
             }
         }
     }

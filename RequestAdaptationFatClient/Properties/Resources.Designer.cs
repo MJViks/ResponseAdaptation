@@ -63,6 +63,26 @@ namespace RequestAdaptationFatClient.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_вставить_таблицу_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-вставить-таблицу-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_свойства_таблицы_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-свойства-таблицы-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LantaGroup {
             get {
                 object obj = ResourceManager.GetObject("LantaGroup", resourceCulture);

@@ -2,6 +2,7 @@
 import './css/Feedback.css';
 export class Feedback extends Component {
     displayName = Feedback.name
+ 
     render() {
         return (
             <div className="parallax__group">
@@ -27,7 +28,8 @@ export class Feedback extends Component {
                         <p className="label">Текст отзыва</p>
                         <textarea className="input-max" placeholder="Опишите свои впечатления после работы с нами."></textarea>
                         <div className="submit-block" >
-                            <img src="https://i.ibb.co/6mHQmxM/16-10-2019-100410.png" />
+                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                            <div className="g-recaptcha " data-sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"></div>
                             <button className="input-button">Отправить</button>
 
                         </div>

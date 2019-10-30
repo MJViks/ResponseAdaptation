@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Windows.Forms;
 using word = Microsoft.Office.Interop.Word;
-using System.Windows;
 
-namespace CarFood
+namespace RequestAdaptationFatClient
 {
-    class RequestAdaptationFatClient
+    class DataWord
     {
         //Процедура вывода чека
         public static void CheckDocument(string NomCheck, string Date, string Time, string[] Tovar, string[] Kolvo, string[] Cena, string SumBS, string SumSS)
@@ -73,6 +73,8 @@ namespace CarFood
 
                 Check.Cell(6, 2).Range.Text = SumBS;
                 Check.Cell(7, 2).Range.Text = SumSS;
+
+
             }
             catch (Exception ex)
             {

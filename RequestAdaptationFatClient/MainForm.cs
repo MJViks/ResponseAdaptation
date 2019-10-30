@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace RequestAdaptationFatClient
 {
+
     public partial class MainForm : Form
     {
         private int ChildFormNumber = 0;
 
-        public int Role = 0;
+        public static string Role = String.Empty, Login = String.Empty;
 
         public bool Cuthoriz = false;
 
@@ -22,27 +23,10 @@ namespace RequestAdaptationFatClient
         {
             
             InitializeComponent();
-   
+
 
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Окно " + ChildFormNumber++;
-            
-            childForm.Show();
-
-            Button btn = new Button();
-            btn.Parent = childForm;
-            btn.Text = "Приветик";
-            btn.Width = 30;
-            btn.Height = 50;
-
-            btn.Left = 5;
-            btn.Top = 20;
-        }
 
         private void OpenFile(object sender, EventArgs e)
         {
@@ -71,17 +55,7 @@ namespace RequestAdaptationFatClient
             this.Close();
         }
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
+       
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -121,20 +95,7 @@ namespace RequestAdaptationFatClient
             }
         }
 
-        private void WindowsMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
@@ -147,14 +108,17 @@ namespace RequestAdaptationFatClient
             Auth.Show();
         }
 
-        private void АккаунтToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void АвторизацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AuthorizFormShow();
+        }
+
+
+        private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
