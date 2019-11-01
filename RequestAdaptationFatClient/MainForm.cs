@@ -13,18 +13,13 @@ namespace RequestAdaptationFatClient
 
     public partial class MainForm : Form
     {
-        private int ChildFormNumber = 0;
 
         public static string Role = String.Empty, Login = String.Empty;
 
-        public bool Cuthoriz = false;
 
         public MainForm()
         {
-            
             InitializeComponent();
-
-
         }
 
 
@@ -54,8 +49,6 @@ namespace RequestAdaptationFatClient
         {
             this.Close();
         }
-
-       
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -108,17 +101,34 @@ namespace RequestAdaptationFatClient
             Auth.Show();
         }
 
-      
-
-        private void АвторизацияToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AuthorizToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AuthorizFormShow();
         }
 
+        private void FeedbackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
 
-        private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+      
+
+        private void CreateForm(string FName)
+        {
+            Form childForm = new Form();
+            childForm.MdiParent = this;
+            childForm.Text = FName;
+            childForm.Show();
         }
     }
 }

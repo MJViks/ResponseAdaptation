@@ -12,6 +12,7 @@ namespace RequestAdaptationFatClient
 {
     public partial class Authorization : Form
     {
+        private static Form ActivForm = MainForm.ActiveForm;
         public Authorization()
         {
             InitializeComponent();
@@ -21,6 +22,8 @@ namespace RequestAdaptationFatClient
                 lblRoleView.Text = "Роль: \n\r" + MainForm.Role;
                 pView.Visible = true;
             }
+            else ActivForm.Enabled = false;
+            
         }
 
         private void ButtonLogin_Click(object sender, EventArgs e)
@@ -32,26 +35,29 @@ namespace RequestAdaptationFatClient
             this.Cursor = Cursors.AppStarting;
             Action action = () =>
             {
-            Authoriz.Auth(tbLogin.Text, tbPass.Text);
-            if (Authoriz.vhod)
-            {
-                MainForm.Login = tbLogin.Text;
-                MainForm.Role = Authoriz.role;
-                lblErr.Text = String.Empty;
+                Authoriz.Auth(tbLogin.Text, tbPass.Text);
+                if (Authoriz.vhod)
+                {
+                    MainForm.Login = tbLogin.Text;
+                    MainForm.Role = Authoriz.role;
+                    lblErr.Text = String.Empty;
+                    btnLogin.Enabled = false;
+                    btnReg.Enabled = false;
+                    ActivForm.Enabled = true;
                     this.Close();
-            }
-            else
-            {
-                tbLogin.Text = String.Empty;
-                tbPass.Text = String.Empty;
-                lblErr.Text = "Неверный логин или пароль! \n\r Попробуйте еще раз!";
-            }
+                }
+                else
+                {
+                    tbLogin.Text = String.Empty;
+                    tbPass.Text = String.Empty;
+                    lblErr.Text = "Неверный логин или пароль! \n\r Попробуйте еще раз!";
+                }
                 btnLogin.Enabled = true;
                 llReg.Enabled = true;
                 this.Cursor = Cursors.Default;
                 tbLogin.Enabled = true;
                 tbPass.Enabled = true;
-            };
+                };
             Invoke(action);
             
         }
