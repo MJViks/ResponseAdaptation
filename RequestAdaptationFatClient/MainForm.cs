@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -172,15 +171,46 @@ namespace RequestAdaptationFatClient
             {
                 case "Отзывы":
                     DataTable trueTable = DBConnect.dtFeedback;
-                    DBConnect.ClearTable("Feedback");
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        DBActions.Feedback_Insert(dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString());
-                    }
-                    DBConnect.FillAllTable();
+                   
+                        //Удаление
+                        
+                        delete_for:
+                        int dtDel = dt.Rows.Count > trueTable.Rows.Count ? dt.Rows.Count : trueTable.Rows.Count;
+                        DBConnect.FillAllTable();
+                        for (int i = 0; i < dtDel; i++)
+                        {
+                            if (Array.IndexOf(dt.Rows[i].ItemArray, trueTable.Rows[i][0]) < 0){
+                                DBActions.Feedback_Delete((int)trueTable.Rows[i][0]);
+                                goto delete_for;
+                            };
+                        };
+                        
+                        //Добавление
 
-
-
+                        insert_for:
+                        int dtIns = dt.Rows.Count > trueTable.Rows.Count ? dt.Rows.Count : trueTable.Rows.Count;
+                        DBConnect.FillAllTable();
+                        for (int i = 0; i < dtIns; i++)
+                        {
+                            if (Array.IndexOf(trueTable.Rows[i].ItemArray, dt.Rows[i][0]) < 0)
+                            {
+                                DBActions.Feedback_Insert(dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), (int)dt.Rows[i][4]);
+                                goto insert_for;
+                            };
+                        };
+                        //Изменение
+                        update_for:
+                        DBConnect.FillAllTable();
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < dt.Columns.Count; j++)
+                            if (trueTable.Rows[i][j] != dt.Rows[i][j])
+                            {
+                                DBActions.Feedback_Update(Convert.ToInt32(dt.Rows[i][0]), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), Convert.ToInt32(dt.Rows[i][4]));
+                                    goto update_for;
+                            }
+                        }
+                    
                     break;
                 case "Сотрудники":
 
