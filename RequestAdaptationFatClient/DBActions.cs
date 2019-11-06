@@ -26,7 +26,7 @@ namespace RequestAdaptationFatClient
 
 
         //Вызов процедуры Добавления в таблицу "Feedback"
-        public static void Feedback_Insert(string Header, string Text, string SoftwareName, int Email)
+        public static void Feedback_Insert(string Header, string Text, string SoftwareName, string Email)
         {
             spConfiguration("Feedback_Insert");
             try
@@ -34,14 +34,14 @@ namespace RequestAdaptationFatClient
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@Header", Header);
                 cmd.Parameters.AddWithValue("@Text", Text);
-                cmd.Parameters.AddWithValue("@SoftwareName", SoftwareName);
+                cmd.Parameters.AddWithValue("@Software_Name", SoftwareName);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 DBConnect.sql.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
-                 MessageBox.Show(ex.Message.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
+                 MessageBox.Show(ex.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
             }
             finally
             {

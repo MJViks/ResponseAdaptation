@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -167,21 +168,19 @@ namespace RequestAdaptationFatClient
             var button = sender as Button;
             var dataGrid = button.Parent.GetChildAtPoint(new Point(1, 1)) as DataGridView;
             DataTable dt = (DataTable)dataGrid.DataSource;
-            switch (button.Parent.Name)
+            switch (button.Parent.Text)
             {
                 case "Отзывы":
-                    if (dt != DBConnect.dtFeedback)
+                    DataTable trueTable = DBConnect.dtFeedback;
+                    DBConnect.ClearTable("Feedback");
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        
-
-                        for (int i = 0; i < dt.Rows.Count; i++)
-                        {
-                            if (dt.Rows[i] != DBConnect.dtFeedback.Rows[i])
-                            {
-                                DBActions.Feedback_Update((int)dt.Rows[i][0], dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), (int)dt.Rows[i][4]);
-                            }
-                        }
+                        DBActions.Feedback_Insert(dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString());
                     }
+                    DBConnect.FillAllTable();
+
+
+
                     break;
                 case "Сотрудники":
 

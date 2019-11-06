@@ -44,9 +44,21 @@ namespace RequestAdaptationFatClient
             sql.Open();
             SqlCommand command = new SqlCommand(query, sql);
             SqlDataReader reader = command.ExecuteReader();
+            table.Clear();
             table.Load(reader);
             reader.Close();
             sql.Close();
+        }
+
+        public static void ClearTable(string tableName)
+        {
+            string sqlExpression = "TRUNCATE TABLE " + tableName;
+            {
+                sql.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, sql);
+                command.ExecuteNonQuery();
+                sql.Close();
+            }
         }
 
         public static void FillAllTable() { 
