@@ -13,14 +13,14 @@ namespace RequestAdaptationFatClient
         public static SqlConnection sql = new SqlConnection("Data Source = " + pc + "; Initial Catalog = " + cat + ";" +
              "Persist Security Info = true; User ID = " + ui + "; Password = \"" + Pass + "\""); //строка подключения
 
-        private static DataTable dtContract = new DataTable();
-        private static DataTable dtSoftware = new DataTable();
-        private static DataTable dtClient = new DataTable();
-        private static DataTable dtSoftwareClient = new DataTable();
-        private static DataTable dtUser = new DataTable();
-        private static DataTable dtFeedback = new DataTable();
-        private static DataTable dtRequest = new DataTable();
-        private static DataTable dtEmployee = new DataTable();
+        public static DataTable dtContract = new DataTable();
+        public static DataTable dtSoftware = new DataTable();
+        public static DataTable dtClient = new DataTable();
+        public static DataTable dtSoftwareClient = new DataTable();
+        public static DataTable dtUser = new DataTable();
+        public static DataTable dtFeedback = new DataTable();
+        public static DataTable dtRequest = new DataTable();
+        public static DataTable dtEmployee = new DataTable();
         private static string qrClient = "SELECT id_Client as 'ID' , Name as 'Название', Email, TelNum as " +
             "'Номер телефона', RoleName as 'Имя роли' FROM dbo.Client join [User] on [User_ID] = [ID_User]",
              qrContract = "select id_Contract as 'ID', Contact_Num as 'Номер контракта', CONCAT([Employee].Surname, " +
@@ -49,36 +49,22 @@ namespace RequestAdaptationFatClient
             sql.Close();
         }
 
-        public void FillContract()
-        {
+        public static void FillAllTable() { 
+      
             FillDataTable(qrContract, dtContract);
-        }
-        public void FillClient()
-        {
+     
             FillDataTable(qrClient, dtClient);
-        }
-        public void FillFeedback()
-        {
+     
             FillDataTable(qrFeedback, dtFeedback);
-        }
-        public void FillRequest()
-        {
+      
             FillDataTable(qrRequest, dtRequest);
-        }
-        public void FillSoftware()
-        {
+      
             FillDataTable(qrSoftware, dtSoftware);
-        }
-        public void FillSoftwareClient()
-        {
+      
             FillDataTable(qrSoftwareClient, dtSoftwareClient);
-        }
-        public void FillEmployee()
-        {
+       
             FillDataTable(qrEmployee, dtEmployee);
-        }
-        public void FillUser()
-        {
+      
             FillDataTable(qrUser, dtUser);
         }
     }

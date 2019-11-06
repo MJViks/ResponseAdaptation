@@ -44,6 +44,7 @@ namespace RequestAdaptationFatClient
                     btnLogin.Enabled = false;
                     btnReg.Enabled = false;
                     ActivForm.Enabled = true;
+                    DBConnect.FillAllTable();
                     this.Close();
                 }
                 else
