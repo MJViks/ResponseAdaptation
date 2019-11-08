@@ -110,7 +110,7 @@ namespace RequestAdaptationFatClient
         private void FeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
       
-            CreateForm("Отзывы", DBConnect.dtFeedback);
+            CreateForm("Отзывы", DBConnect.bsFeedback);
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace RequestAdaptationFatClient
 
     
 
-        private void CreateForm(string formName, DataTable table)
+        private void CreateForm(string formName, BindingSource bindSource)
         {
             Form childForm = new Form();
             childForm.MdiParent = this;
@@ -141,11 +141,7 @@ namespace RequestAdaptationFatClient
             dataGrid.Height = 200;
             dataGrid.Anchor = ((AnchorStyles)(((AnchorStyles.Top | AnchorStyles.Left)
             | AnchorStyles.Right)));
-
-            DataTable tempDataTable = new DataTable();
-            tempDataTable.Load(table.CreateDataReader());
-
-            dataGrid.DataSource = tempDataTable;
+            dataGrid.DataSource = bindSource;
             dataGrid.ColumnHeadersHeight = 50;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -156,71 +152,81 @@ namespace RequestAdaptationFatClient
             btnSave.Width = 120;
             btnSave.Top = 220;
             btnSave.Left = 20;
-
             btnSave.Anchor = ((AnchorStyles)((AnchorStyles.Bottom | AnchorStyles.Left)));
             btnSave.Text = "Сохранить";
             btnSave.Click += new EventHandler(SaveDataTable);
-
             childForm.Show();
         }
         private void SaveDataTable(object sender, EventArgs e)
         {
-            var button = sender as Button;
-            var dataGrid = button.Parent.GetChildAtPoint(new Point(1, 1)) as DataGridView;
-            DataTable dt = (DataTable)dataGrid.DataSource;
-            switch (button.Parent.Text)
+            string tableName = (sender as Button).Parent.Text;
+            switch (tableName)
             {
                 case "Отзывы":
-                    DataTable trueTable = DBConnect.dtFeedback;
-                    DBConnect.ClearTable("Feedback");
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        DBActions.Feedback_Insert(dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString());
-                    }
-                    DBConnect.FillAllTable();
 
-
+                    DBConnect.UpdateFeedbackAdapter();
 
                     break;
                 case "Сотрудники":
-
+                    DBConnect.UpdateEmployeeAdapter();
                     break;
                 case "Аккаунты":
-
+                    DBConnect.UpdateUserAdapter();
                     break;
                 case "Клиенты":
-
+                    DBConnect.UpdateClientAdapter();
                     break;
                 case "Договоры":
-
+                    DBConnect.UpdateContractAdapter();
                     break;
                 case "Заявки":
-
+                    DBConnect.UpdateRequestAdapter();
                     break;
                 case "Программные продукты":
-
+                    DBConnect.UpdateSoftwareAdapter();
                     break;
-                case "Прогруммные продукты клиентов":
-
+                case "Программные продукты клиентов":
+                    DBConnect.UpdateSoftwareClientAdapter();
                     break;
             }
         }
 
-       
-
-        private void chBetweenTable(DataTable D1, DataTable D2, EventArgs e)
+        private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (D1 != D2)
-            {
-                for (int i = 0; i < D1.Rows.Count; i++)
-                {
-                    if (D1.Rows[i] != D2.Rows[i])
-                    {
-
-                    }
-                } 
-            }
+            CreateForm("Сотрудники", DBConnect.bsEmployee);
         }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm("Аккаунты", DBConnect.bsUser);
+        }
+
+        private void clientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm("Клиенты", DBConnect.bsClient);
+        }
+
+        private void contractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm("Договоры", DBConnect.bsContract);
+        }
+
+        private void requestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm("Заявки", DBConnect.bsRequest);
+        }
+
+        private void softwareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm("Программные продукты", DBConnect.bsSoftware);
+        }
+
+        private void softwareClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm("Программные продукты клиентов", DBConnect.bsSoftwareClient);
+        }
+
+        
     }
 
 }

@@ -41,7 +41,6 @@ namespace RequestAdaptationFatClient
 
                         SqlCommand cmd = new SqlCommand("SELECT roleName from [user] where Login = '" + Login + "'", DBConnect.sql);
                         role = (string)cmd.ExecuteScalar();
-                        DBConnect.sql.Close();
                     }
                     else // Если пароль не подходит
                     {

@@ -62,30 +62,29 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accauntMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.авторизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AuthorizToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printPreviewToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.отзывыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сотрудникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.аккаунтыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.клиентыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.договорыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.заявкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.программныеПродуктыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.прогруммныеПродуктыКлиентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.softwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.softwareClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -354,25 +353,25 @@
             // accauntMenu
             // 
             this.accauntMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.авторизацияToolStripMenuItem,
-            this.выходToolStripMenuItem});
+            this.AuthorizToolStripMenuItem,
+            this.ExitToolStripMenuItem});
             this.accauntMenu.Name = "accauntMenu";
             this.accauntMenu.Size = new System.Drawing.Size(63, 19);
             this.accauntMenu.Text = "&Аккаунт";
             // 
-            // авторизацияToolStripMenuItem
+            // AuthorizToolStripMenuItem
             // 
-            this.авторизацияToolStripMenuItem.Name = "авторизацияToolStripMenuItem";
-            this.авторизацияToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.авторизацияToolStripMenuItem.Text = "Авторизация";
-            this.авторизацияToolStripMenuItem.Click += new System.EventHandler(this.AuthorizToolStripMenuItem_Click);
+            this.AuthorizToolStripMenuItem.Name = "AuthorizToolStripMenuItem";
+            this.AuthorizToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.AuthorizToolStripMenuItem.Text = "Авторизация";
+            this.AuthorizToolStripMenuItem.Click += new System.EventHandler(this.AuthorizToolStripMenuItem_Click);
             // 
-            // выходToolStripMenuItem
+            // ExitToolStripMenuItem
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.ExitToolStripMenuItem.Text = "Выход";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
@@ -425,76 +424,83 @@
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.отзывыToolStripMenuItem,
-            this.сотрудникиToolStripMenuItem1,
-            this.аккаунтыToolStripMenuItem,
-            this.клиентыToolStripMenuItem1,
-            this.договорыToolStripMenuItem1,
-            this.заявкиToolStripMenuItem,
-            this.программныеПродуктыToolStripMenuItem1,
-            this.прогруммныеПродуктыКлиентовToolStripMenuItem});
+            this.feedbackToolStripMenuItem,
+            this.employeeToolStripMenuItem,
+            this.userToolStripMenuItem,
+            this.clientToolStripMenuItem,
+            this.contractToolStripMenuItem,
+            this.requestToolStripMenuItem,
+            this.softwareToolStripMenuItem,
+            this.softwareClientToolStripMenuItem});
             this.toolStripDropDownButton1.Image = global::RequestAdaptationFatClient.Properties.Resources.icons8_вставить_таблицу_48;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
             this.toolStripDropDownButton1.Text = "Новая таблица";
             // 
-            // отзывыToolStripMenuItem
+            // feedbackToolStripMenuItem
             // 
-            this.отзывыToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("отзывыToolStripMenuItem.Image")));
-            this.отзывыToolStripMenuItem.Name = "отзывыToolStripMenuItem";
-            this.отзывыToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.отзывыToolStripMenuItem.Text = "Отзывы";
-            this.отзывыToolStripMenuItem.Click += new System.EventHandler(this.FeedbackToolStripMenuItem_Click);
+            this.feedbackToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("feedbackToolStripMenuItem.Image")));
+            this.feedbackToolStripMenuItem.Name = "feedbackToolStripMenuItem";
+            this.feedbackToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.feedbackToolStripMenuItem.Text = "Отзывы";
+            this.feedbackToolStripMenuItem.Click += new System.EventHandler(this.FeedbackToolStripMenuItem_Click);
             // 
-            // сотрудникиToolStripMenuItem1
+            // employeeToolStripMenuItem
             // 
-            this.сотрудникиToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("сотрудникиToolStripMenuItem1.Image")));
-            this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(265, 22);
-            this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
+            this.employeeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("employeeToolStripMenuItem.Image")));
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.employeeToolStripMenuItem.Text = "Сотрудники";
+            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
             // 
-            // аккаунтыToolStripMenuItem
+            // userToolStripMenuItem
             // 
-            this.аккаунтыToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("аккаунтыToolStripMenuItem.Image")));
-            this.аккаунтыToolStripMenuItem.Name = "аккаунтыToolStripMenuItem";
-            this.аккаунтыToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.аккаунтыToolStripMenuItem.Text = "Аккаунты";
+            this.userToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("userToolStripMenuItem.Image")));
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.userToolStripMenuItem.Text = "Аккаунты";
+            this.userToolStripMenuItem.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
             // 
-            // клиентыToolStripMenuItem1
+            // clientToolStripMenuItem
             // 
-            this.клиентыToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("клиентыToolStripMenuItem1.Image")));
-            this.клиентыToolStripMenuItem1.Name = "клиентыToolStripMenuItem1";
-            this.клиентыToolStripMenuItem1.Size = new System.Drawing.Size(265, 22);
-            this.клиентыToolStripMenuItem1.Text = "Клиенты";
+            this.clientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clientToolStripMenuItem.Image")));
+            this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.clientToolStripMenuItem.Text = "Клиенты";
+            this.clientToolStripMenuItem.Click += new System.EventHandler(this.clientToolStripMenuItem_Click);
             // 
-            // договорыToolStripMenuItem1
+            // contractToolStripMenuItem
             // 
-            this.договорыToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("договорыToolStripMenuItem1.Image")));
-            this.договорыToolStripMenuItem1.Name = "договорыToolStripMenuItem1";
-            this.договорыToolStripMenuItem1.Size = new System.Drawing.Size(265, 22);
-            this.договорыToolStripMenuItem1.Text = "Договоры";
+            this.contractToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("contractToolStripMenuItem.Image")));
+            this.contractToolStripMenuItem.Name = "contractToolStripMenuItem";
+            this.contractToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.contractToolStripMenuItem.Text = "Договоры";
+            this.contractToolStripMenuItem.Click += new System.EventHandler(this.contractToolStripMenuItem_Click);
             // 
-            // заявкиToolStripMenuItem
+            // requestToolStripMenuItem
             // 
-            this.заявкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("заявкиToolStripMenuItem.Image")));
-            this.заявкиToolStripMenuItem.Name = "заявкиToolStripMenuItem";
-            this.заявкиToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.заявкиToolStripMenuItem.Text = "Заявки";
+            this.requestToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("requestToolStripMenuItem.Image")));
+            this.requestToolStripMenuItem.Name = "requestToolStripMenuItem";
+            this.requestToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.requestToolStripMenuItem.Text = "Заявки";
+            this.requestToolStripMenuItem.Click += new System.EventHandler(this.requestToolStripMenuItem_Click);
             // 
-            // программныеПродуктыToolStripMenuItem1
+            // softwareToolStripMenuItem
             // 
-            this.программныеПродуктыToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("программныеПродуктыToolStripMenuItem1.Image")));
-            this.программныеПродуктыToolStripMenuItem1.Name = "программныеПродуктыToolStripMenuItem1";
-            this.программныеПродуктыToolStripMenuItem1.Size = new System.Drawing.Size(265, 22);
-            this.программныеПродуктыToolStripMenuItem1.Text = "Программные продукты";
+            this.softwareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("softwareToolStripMenuItem.Image")));
+            this.softwareToolStripMenuItem.Name = "softwareToolStripMenuItem";
+            this.softwareToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.softwareToolStripMenuItem.Text = "Программные продукты";
+            this.softwareToolStripMenuItem.Click += new System.EventHandler(this.softwareToolStripMenuItem_Click);
             // 
-            // прогруммныеПродуктыКлиентовToolStripMenuItem
+            // softwareClientToolStripMenuItem
             // 
-            this.прогруммныеПродуктыКлиентовToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("прогруммныеПродуктыКлиентовToolStripMenuItem.Image")));
-            this.прогруммныеПродуктыКлиентовToolStripMenuItem.Name = "прогруммныеПродуктыКлиентовToolStripMenuItem";
-            this.прогруммныеПродуктыКлиентовToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.прогруммныеПродуктыКлиентовToolStripMenuItem.Text = "Прогруммные продукты клиентов";
+            this.softwareClientToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("softwareClientToolStripMenuItem.Image")));
+            this.softwareClientToolStripMenuItem.Name = "softwareClientToolStripMenuItem";
+            this.softwareClientToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.softwareClientToolStripMenuItem.Text = "Прогруммные продукты клиентов";
+            this.softwareClientToolStripMenuItem.Click += new System.EventHandler(this.softwareClientToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -514,20 +520,20 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(66, 17);
             this.toolStripStatusLabel.Text = "Состояние";
             // 
-            // dataGridView1
+            // comboBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(406, 236);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 14;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(365, 293);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 16;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 511);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -546,7 +552,6 @@
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,18 +599,18 @@
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem accauntMenu;
-        private System.Windows.Forms.ToolStripMenuItem авторизацияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AuthorizToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem отзывыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem аккаунтыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem договорыToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem заявкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem программныеПродуктыToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem прогруммныеПродуктыКлиентовToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem feedbackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem requestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem softwareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem softwareClientToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

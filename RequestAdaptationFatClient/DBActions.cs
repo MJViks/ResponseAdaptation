@@ -60,7 +60,7 @@ namespace RequestAdaptationFatClient
                 cmd.Parameters.AddWithValue("@ID_Feedback", Header);
                 cmd.Parameters.AddWithValue("@Header", Header);
                 cmd.Parameters.AddWithValue("@Text", Text);
-                cmd.Parameters.AddWithValue("@SoftwareName", SoftwareName);
+                cmd.Parameters.AddWithValue("@Software_Name", SoftwareName);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 DBConnect.sql.Open();
                 cmd.ExecuteNonQuery();

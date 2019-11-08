@@ -44,7 +44,7 @@ namespace RequestAdaptationFatClient
                     btnLogin.Enabled = false;
                     btnReg.Enabled = false;
                     ActivForm.Enabled = true;
-                    DBConnect.FillAllTable();
+                    DBConnect.FillTableBinding();
                     this.Close();
                 }
                 else
@@ -59,7 +59,7 @@ namespace RequestAdaptationFatClient
                 tbLogin.Enabled = true;
                 tbPass.Enabled = true;
                 };
-            Invoke(action);
+            action?.Invoke();
             
         }
 
