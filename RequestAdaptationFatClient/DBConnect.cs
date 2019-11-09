@@ -23,22 +23,19 @@ namespace RequestAdaptationFatClient
         public static DataTable dtRequest = new DataTable();
         public static DataTable dtEmployee = new DataTable();
         public static string qrClient = "SELECT id_Client as 'ID' , Name as 'Название', Email, TelNum as " +
-            "'Номер телефона', RoleName as 'Имя роли' FROM dbo.Client join [User] on [User_ID] = [ID_User]",
-             qrContract = "select id_Contract as 'ID', Contact_Num as 'Номер контракта', CONCAT([Employee].Surname, " +
-            "[Employee].Name, [Employee].Midlename) as 'ФИО Сотрудника', [Client].[Name] as 'Наиминование клиента', [text] " +
-            "as 'Текст договора', [Date_Create] as 'Дата договора'    from Contract join Employee on Employee_ID = id_Employee " +
-            "join Client on id_Client = Client_ID",
+            "'Номер телефона', [User_ID] as 'Код аккаунта' FROM dbo.Client",
+             qrContract = "select id_Contract as 'ID', Contact_Num as 'Номер контракта', [Employee_ID] as 'ID сотрудника', [Client_ID] as 'ID клиента', [text] " +
+            "as 'Текст договора', [Date_Create] as 'Дата договора' from Contract",
              qrSoftware = "Select id_Software as 'ID', [Name] as 'Название', Price as 'Цена' from Software",
-             qrSoftwareClient = "select [Software].[Name] as 'Наиминование ПО', [Software].[id_Software] as 'ID ПО', " +
-            "[Client].[id_Client] as 'ID Клиента', [Client].[Name] as 'Наиминование клиента'  from Software_Client join " +
-            "Client on Client_ID = id_Client join Software on Software_ID = id_Software",
+             qrSoftwareClient = "select [ID_Software_Client] as 'ID', [Software_ID] as 'ID ПО', [Client_ID] as 'ID Клиента', " +
+            "[StartDate] as 'Дата начала', [StopDate] as 'Дата окончания' from Software_Client",
              qrUser = "select id_User as 'ID', [Login] as 'Логин', Pass as 'Пароль', RoleName as 'Роль' from [User]",
              qrFeedback = "select id_Feedback as 'ID', Header as 'Заголовок', [text] as 'Текст'," +
             " Software_Name as 'Программный продукт', Email from Feedback",
-             qrRequest = "select id_Request as 'ID', Client.[Name] as 'Наиминование клиениа', [TEXT] as 'Текст заявки'," +
-            " Software_Name as 'Название программного продукта' from Request join Client on id_Client = Client_id",
+             qrRequest = "select id_Request as 'ID', [Client_ID] as 'ID Клиента', [TEXT] as 'Текст заявки'," +
+            " Software_Name as 'Название программного продукта' from Request",
             qrEmployee = "select id_Employee as 'ID', Surname as 'Фамилия', [Name] as 'Имя', Midlename as 'Отчество', " +
-            "Post as 'Должность', RoleName as 'Роль' from Employee join [User] on [User_ID] = [id_User]";
+            "Post as 'Должность', User_ID as 'Код аккаунта' from Employee";
 
         public static BindingSource bsFeedback = new BindingSource();
         public static BindingSource bsEmployee = new BindingSource();
@@ -79,52 +76,116 @@ namespace RequestAdaptationFatClient
 
         public static void UpdateFeedbackAdapter()
         {
+            try { 
             SqlCommandBuilder cBuilder = new SqlCommandBuilder(daFeedback);
             daFeedback.SelectCommand = new SqlCommand(qrFeedback, sql);
             daFeedback.Update(dtFeedback);
+                FillTableBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
         }
         public static void UpdateClientAdapter()
         {
-            SqlCommandBuilder cBuilder = new SqlCommandBuilder(daClient);
+            try
+            {
+                SqlCommandBuilder cBuilder = new SqlCommandBuilder(daClient);
             daClient.SelectCommand = new SqlCommand(qrClient, sql);
             daClient.Update(dtClient);
-        }
+                FillTableBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
+}
 
         public static void UpdateContractAdapter()
         {
-            SqlCommandBuilder cBuilder = new SqlCommandBuilder(daContract);
+            try
+            {
+                SqlCommandBuilder cBuilder = new SqlCommandBuilder(daContract);
             daContract.SelectCommand = new SqlCommand(qrContract, sql);
             daContract.Update(dtContract);
+                FillTableBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
         }
         public static void UpdateUserAdapter()
         {
-            SqlCommandBuilder cBuilder = new SqlCommandBuilder(daUser);
+            try
+            {
+                SqlCommandBuilder cBuilder = new SqlCommandBuilder(daUser);
             daUser.SelectCommand = new SqlCommand(qrUser, sql);
             daUser.Update(dtUser);
+                FillTableBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
         }
         public static void UpdateRequestAdapter()
         {
-            SqlCommandBuilder cBuilder = new SqlCommandBuilder(daRequest);
+            try
+            {
+                SqlCommandBuilder cBuilder = new SqlCommandBuilder(daRequest);
             daRequest.SelectCommand = new SqlCommand(qrRequest, sql);
             daRequest.Update(dtRequest);
+                FillTableBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
         }
         public static void UpdateEmployeeAdapter()
         {
-            SqlCommandBuilder cBuilder = new SqlCommandBuilder(daEmployee);
+            try
+            {
+                SqlCommandBuilder cBuilder = new SqlCommandBuilder(daEmployee);
             daEmployee.SelectCommand = new SqlCommand(qrEmployee, sql);
             daEmployee.Update(dtEmployee);
+                FillTableBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
         }
         public static void UpdateSoftwareAdapter()
         {
-            SqlCommandBuilder cBuilder = new SqlCommandBuilder(daSoftware);
+            try
+            {
+                SqlCommandBuilder cBuilder = new SqlCommandBuilder(daSoftware);
             daSoftware.SelectCommand = new SqlCommand(qrSoftware, sql);
             daSoftware.Update(dtSoftware);
+                FillTableBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
         }
         public static void UpdateSoftwareClientAdapter()
         {
-            SqlCommandBuilder cBuilder = new SqlCommandBuilder(daSoftwareClient);
+            try
+            {
+                SqlCommandBuilder cBuilder = new SqlCommandBuilder(daSoftwareClient);
             daSoftwareClient.SelectCommand = new SqlCommand(qrSoftwareClient, sql);
             daSoftwareClient.Update(dtSoftwareClient);
+                FillTableBinding();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не все поля валидны!!!\n\rПерепроверьте!\n\r" + ex.Message.ToString());
+            }
         }
 
 

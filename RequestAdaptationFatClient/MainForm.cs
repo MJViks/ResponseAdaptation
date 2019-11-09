@@ -155,6 +155,22 @@ namespace RequestAdaptationFatClient
             btnSave.Anchor = ((AnchorStyles)((AnchorStyles.Bottom | AnchorStyles.Left)));
             btnSave.Text = "Сохранить";
             btnSave.Click += new EventHandler(SaveDataTable);
+
+            if (formName == "Клиенты" ||
+                formName == "Договоры" ||
+                formName == "Сотрудники" || 
+                formName == "Заявки" || 
+                formName == "Прогруммные продукты клиентов") { 
+            Button btnOpenChild = new Button();
+            btnOpenChild.Parent = childForm;
+            btnOpenChild.Height = 30;
+            btnOpenChild.Width = 160;
+            btnOpenChild.Top = 220;
+            btnOpenChild.Left = 160;
+            btnOpenChild.Anchor = ((AnchorStyles)((AnchorStyles.Bottom | AnchorStyles.Left)));
+            btnOpenChild.Text = "Открыть дочерние таблицы";
+            btnOpenChild.Click += new EventHandler(OpenChildTable);
+            }
             childForm.Show();
         }
         private void SaveDataTable(object sender, EventArgs e)
@@ -187,6 +203,31 @@ namespace RequestAdaptationFatClient
                     break;
                 case "Программные продукты клиентов":
                     DBConnect.UpdateSoftwareClientAdapter();
+                    break;
+            }
+        }
+
+        private void OpenChildTable(object sender, EventArgs e)
+        {
+            string tableName = (sender as Button).Parent.Text;
+            switch (tableName)
+            {
+                case "Сотрудники":
+                    CreateForm("Аккаунты", DBConnect.bsUser);
+                    break;
+                case "Клиенты":
+                    CreateForm("Аккаунты", DBConnect.bsUser);
+                    break;
+                case "Договоры":
+                    CreateForm("Сотрудники", DBConnect.bsEmployee);
+                    CreateForm("Клиенты", DBConnect.bsClient);
+                    break;
+                case "Заявки":
+                    CreateForm("Клиенты", DBConnect.bsClient);
+                    break;
+                case "Программные продукты клиентов":
+                    CreateForm("Клиенты", DBConnect.bsClient);
+                    CreateForm("Программные продукты", DBConnect.bsSoftware);
                     break;
             }
         }
