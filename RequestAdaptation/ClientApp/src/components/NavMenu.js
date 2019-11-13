@@ -27,7 +27,7 @@ export class NavMenu extends Component {
             this.state.classNav === "nav close-nav" ? "-320px" : "0px";
 
         document.getElementById("body").style.paddingRight =
-            this.state.classNav === "nav close-nav" ? "300px" : "0px";
+            this.state.classNav === "nav close-nav" ? "320px" : "0px";
     };
 
     render() {

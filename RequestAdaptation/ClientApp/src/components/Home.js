@@ -1,7 +1,40 @@
 import React, { Component } from "react";
 import "./css/Home.css";
+import { ReCaptcha } from 'react-recaptcha-google'
 export class Home extends Component {
     displayName = Home.name;
+    constructor(props, context) {
+        super(props, context);
+        this.verifyCallback = this.verifyCallback.bind(this);
+    };
+
+
+    async Submit() {
+        let data = {
+            name: document.getElementById('name').value,
+            software: document.getElementById('softwareName').value,
+            email: document.getElementById('emailText').value,
+            text: document.getElementById('textArea').value
+        };
+        try {
+            await fetch('api/Home', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8'
+                }
+            }).then(request => request.text()).then(answ => alert(answ));
+         
+        } catch (error) {
+            console.error('Ошибка:', error);
+        };
+    };
+
+    verifyCallback() {
+        document.getElementById('btnSubHome').disabled = "";
+        document.getElementById('btnSubHome').style.backgroundColor = "#409fff";
+    };
+
     render() {
         return (
             <div className="parallax__group">
@@ -21,19 +54,26 @@ export class Home extends Component {
                     <h2>Создание заявки</h2>
                     <div className="form-submit">
                         <p className="label">Название организации</p>
-                        <input className="input-mini"></input>
+                        <input id="name" className="input-mini"></input>
                         <p className="label">Название программного продукта</p>
-                        <input className="input-mini"></input>
+                        <input id="softwareName" className="input-mini"></input>
                         <p className="label">E-mail</p>
-                        <input type="email" placeholder="@" className="input-mini"></input>
+                        <input id="emailText" type="email" placeholder="@" className="input-mini"></input>
                         <p className="label">Текст заявки</p>
-                        <textarea
+                        <textarea id="textArea"
                             className="input-max"
                             placeholder="Укажите свои поженалия и предпочтения."
                         ></textarea>
                         <div className="submit-block">
-                            <div className="g-recaptcha " data-sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"></div>
-                            <button className="input-button">Отправить</button>
+                            <ReCaptcha
+                                ref={(el) => { this.captchaDemo = el; }}
+                                size="normal"
+                                data-theme="dark"
+                                render="explicit"
+                                sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"
+                                verifyCallback={this.verifyCallback}
+                            />
+                            <button id="btnSubHome" onClick={this.Submit} /*disabled="disabled"*/ className="input-button">Отправить</button>
                         </div>
                     </div>
                 </div>

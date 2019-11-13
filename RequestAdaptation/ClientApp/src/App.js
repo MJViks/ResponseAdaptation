@@ -7,7 +7,6 @@ import { About } from "./components/About";
 import { Feedback } from "./components/Feedback";
 
 
-
 export default class App extends Component {
     displayName = App.name;
     render() {

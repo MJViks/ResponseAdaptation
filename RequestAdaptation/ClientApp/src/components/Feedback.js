@@ -1,8 +1,19 @@
 ﻿import React, { Component } from 'react';
 import './css/Feedback.css';
+import { ReCaptcha } from 'react-recaptcha-google'
 export class Feedback extends Component {
     displayName = Feedback.name
- 
+
+    constructor(props, context) {
+        super(props, context);
+        this.verifyCallback = this.verifyCallback.bind(this);
+    }
+
+    verifyCallback() {
+        document.getElementById('btnSubFeedback').disabled = "";
+        document.getElementById('btnSubFeedback').style.backgroundColor = "#409fff";
+    }
+
     render() {
         return (
             <div className="parallax__group">
@@ -28,9 +39,15 @@ export class Feedback extends Component {
                         <p className="label">Текст отзыва</p>
                         <textarea className="input-max" placeholder="Опишите свои впечатления после работы с нами."></textarea>
                         <div className="submit-block" >
-                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                            <div className="g-recaptcha " data-sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"></div>
-                            <button className="input-button">Отправить</button>
+                            <ReCaptcha
+                                ref={(el) => { this.captchaDemo = el; }}
+                                size="normal"
+                                data-theme="dark"
+                                render="explicit"
+                                sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"
+                                verifyCallback={this.verifyCallback}
+                            />
+                            <button id="btnSubFeedback" className="input-button" disabled="disabled">Отправить</button>
 
                         </div>
                     </div>
