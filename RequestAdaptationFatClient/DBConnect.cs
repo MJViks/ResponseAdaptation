@@ -10,7 +10,7 @@ namespace RequestAdaptationFatClient
         private static string pc = "31.31.196.234";
         private static string cat = "u0831431_RequestAdaptation";
         private static string ui = "u0831431_LantaAdmin";
-        private static string Pass = "A8fYznv993kcyDG";
+        private static string Pass = "Dr4psEmtLkgwCnq";
         public static SqlConnection sql = new SqlConnection("Data Source = " + pc + "; Initial Catalog = " + cat + ";" +
              "Persist Security Info = true; User ID = " + ui + "; Password = \"" + Pass + "\""); //строка подключения
 
