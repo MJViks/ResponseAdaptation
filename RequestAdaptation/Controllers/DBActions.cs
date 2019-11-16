@@ -21,7 +21,7 @@ namespace RequestAdaptation
             return scalar;
         }
 
-        public static void RequestASP_Insert(string Text, string Software_Name, string Name, string Email)
+        public static string RequestASP_Insert(string Text, string Software_Name, string Name, string Email)
         {
             spConfiguration("RequestASP_Insert");
             try
@@ -33,10 +33,11 @@ namespace RequestAdaptation
                 cmd.Parameters.AddWithValue("@Email", Email);
                 DBConnect.sql.Open();
                 cmd.ExecuteNonQuery();
+                return "Заявка успешно отправлена!";
             }
             catch (SqlException ex)
             {
-                //MessageBox.Show(ex.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
+                return ex.Message.ToString();
             }
             finally
             {
@@ -45,8 +46,10 @@ namespace RequestAdaptation
         }
 
 
+
+
         //Вызов процедуры Добавления в таблицу "Feedback"
-        public static void Feedback_Insert(string Header, string Text, string SoftwareName, string Email)
+        public static string Feedback_Insert(string Header, string Text, string SoftwareName, string Email)
         {
             spConfiguration("Feedback_Insert");
             try
@@ -58,10 +61,11 @@ namespace RequestAdaptation
                 cmd.Parameters.AddWithValue("@Email", Email);
                 DBConnect.sql.Open();
                 cmd.ExecuteNonQuery();
+                return "Спасибо за ваш отзыв!";
             }
             catch (SqlException ex)
             {
-                 //MessageBox.Show(ex.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
+                return ex.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString();
             }
             finally
             {

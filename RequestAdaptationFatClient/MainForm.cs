@@ -172,6 +172,8 @@ namespace RequestAdaptationFatClient
             btnOpenChild.Click += new EventHandler(OpenChildTable);
             }
             childForm.Show();
+
+            DBConnect.FillTableBinding();
         }
         private void SaveDataTable(object sender, EventArgs e)
         {
@@ -205,6 +207,7 @@ namespace RequestAdaptationFatClient
                     DBConnect.UpdateSoftwareClientAdapter();
                     break;
             }
+            DBConnect.FillTableBinding();
         }
 
         private void OpenChildTable(object sender, EventArgs e)
@@ -262,9 +265,14 @@ namespace RequestAdaptationFatClient
             CreateForm("Программные продукты", DBConnect.bsSoftware);
         }
 
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+        }
+
         private void softwareClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateForm("Программные продукты клиентов", DBConnect.bsSoftwareClient);
+
         }
 
         

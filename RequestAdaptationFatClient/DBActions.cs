@@ -22,6 +22,29 @@ namespace RequestAdaptationFatClient
             return scalar;
         }
 
+        public static void RequestASP_Insert(string Text, string Software_Name, string Name, string Email)
+        {
+            spConfiguration("RequestASP_Insert");
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Text", Text);
+                cmd.Parameters.AddWithValue("@Software_Name", Software_Name);
+                cmd.Parameters.AddWithValue("@Name", Name);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                DBConnect.sql.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString() + "\n\rНомер ошибки: " + ex.HResult.ToString());
+            }
+            finally
+            {
+                DBConnect.sql.Close();
+            }
+        }
+
 
 
         //Вызов процедуры Добавления в таблицу "Feedback"

@@ -28,7 +28,7 @@ export class Foter extends Component {
                                     className='foter-contect-content-logo'
                                 />
                                 <img
-                                    src='http://lanta-group.ru/wp-content/themes/lanta-group/image/LantaGroupQR.jpg'
+                                    src='https://i.ibb.co/X7FbbQM/Lanta-Group-QR.jpg'
                                     className='foter-contect-content-qr'
                                 />
                             </div>

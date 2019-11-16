@@ -4,18 +4,46 @@ import { ReCaptcha } from 'react-recaptcha-google'
 export class Feedback extends Component {
     displayName = Feedback.name
 
-    constructor(props, context) {
-        super(props, context);
-        this.verifyCallback = this.verifyCallback.bind(this);
-    }
+    constructor(props) {
+        super(props);
+        this.state = {
+            capch: false,
+        };
+    };
 
-    verifyCallback() {
-        document.getElementById('btnSubFeedback').disabled = "";
-        document.getElementById('btnSubFeedback').style.backgroundColor = "#409fff";
-    }
+    Submit = () => {
+        if (this.state.capch) {
+            const data = {
+                name: document.getElementById('name').value,
+                software: document.getElementById('software').value,
+                email: document.getElementById('email').value,
+                text: document.getElementById('text').value
+            };
+            try {
+                fetch('api/Feedback', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }
+                }).then(request => request.text()).
+                    then(answ => alert(answ));
+                alert(this.state.data.email);
+
+            } catch (error) {
+                console.error('Ошибка:', error);
+            };
+        }
+    };
 
     render() {
+        var Recaptcha = require('react-recaptcha');
+        var verifyCallback = () => {
+            this.setState({ capch: true });
+            document.getElementById('btnSubFeedback').style.backgroundColor = "#409fff";
+        };
         return (
+
             <div className="parallax__group">
                 <div className="home-deep-back parallax__layer parallax__layer--deep_Feedback">
 
@@ -31,23 +59,21 @@ export class Feedback extends Component {
                     <h2>Создание отзыва</h2>
                     <div className="form-submit">
                         <p className="label">Название организации</p>
-                        <input className="input-mini"></input>
+                        <input id="name" className="input-mini"></input>
                         <p className="label">Название программного продукта</p>
-                        <input className="input-mini"></input>
+                        <input id="software" className="input-mini"></input>
                         <p className="label">E-mail</p>
-                        <input type="email" placeholder="@" className="input-mini"></input>
+                        <input id="email" type="email" placeholder="@" className="input-mini"></input>
                         <p className="label">Текст отзыва</p>
-                        <textarea className="input-max" placeholder="Опишите свои впечатления после работы с нами."></textarea>
+                        <textarea id="text" className="input-max" placeholder="Опишите свои впечатления после работы с нами."></textarea>
                         <div className="submit-block" >
-                            <ReCaptcha
-                                ref={(el) => { this.captchaDemo = el; }}
-                                size="normal"
-                                data-theme="dark"
-                                render="explicit"
+                            <Recaptcha
                                 sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"
-                                verifyCallback={this.verifyCallback}
+                                theme="dark"
+                                verifyCallback={verifyCallback}
+                                expiredCallback={verifyCallback}
                             />
-                            <button id="btnSubFeedback" className="input-button" disabled="disabled">Отправить</button>
+                            <button id="btnSubFeedback" onClick={this.Submit} className="input-button">Отправить</button>
 
                         </div>
                     </div>

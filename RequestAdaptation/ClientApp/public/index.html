@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#FFFFFF">
     <base href="%PUBLIC_URL%/" />
     <!--<link rel="preconnect" href="https://example.com">-->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto:300,400&display=swap" rel="stylesheet">
     <script src="build/react.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="apple-touch-icon" href="favicon.png" />
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -26,12 +27,33 @@
     -->
     <title>Адаптация ЛантаГрупп</title>
 </head>
-  <body id="body">
-      <noscript>
-          You need to enable JavaScript to run this app.
-      </noscript>
-      <div id="root"></div>
-      <!--
+
+<body id="body">
+
+    <div id="root"></div>
+
+    <noscript>
+        Оуу.. Похоже, что у вас отключен JavaScript.
+    </noscript>
+    <script>
+        // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
+
+        // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+        // Check compatibility for the browser we're running this in
+        if ("serviceWorker" in navigator) {
+                window.addEventListener('load', () => {
+                    // Register the service worker
+                    navigator.serviceWorker
+                        .register("pwabuilder-sw.js", {
+                            scope: "./"
+                        });
+                }
+            
+        }
+
+    </script>
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -42,5 +64,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-  </body>
+</body>
 </html>

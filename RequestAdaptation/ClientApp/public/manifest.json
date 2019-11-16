@@ -1,15 +1,21 @@
 {
-  "short_name": "јдаптаци€ Ћанта√рупп",
-  "name": "јдаптаци€ Ћанта√рупп",
+  "short_name": "Request",
+  "name": "Request Adaptation Lanta",
+  "description": "Request Adaptation Lanta co",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#1b1c20",
+  "background_color": "#1b1c20"
 }
