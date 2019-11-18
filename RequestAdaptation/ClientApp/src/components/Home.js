@@ -6,6 +6,7 @@ export class Home extends Component {
         super(props);
         this.state = {
             capch: false,
+            answer: "",
             };
     };
     Submit = () => {
@@ -24,21 +25,55 @@ export class Home extends Component {
                 'Content-Type': 'application/json; charset=utf-8'
             }
             }).then(request => request.text()).
-                then(answ => alert(answ));
-            alert(this.state.data.email);
-
+                then(answ => {
+                    this.setState({ answer: answ });
+                    alert(answ)
+                });
         } catch (error) {
             console.error('Ошибка:', error);
             };
         }
     };
 
-    render() {
+    renderForm() {
         var Recaptcha = require('react-recaptcha');
+        let recaptchaInstance;
         var verifyCallback = () => {
             this.setState({ capch: true });
             document.getElementById('btnSubHome').style.backgroundColor = "#409fff";
+         
         };
+        return (
+            <div className="form-submit">
+                <p className="label">Название организации</p>
+                <input id="name" className="input-mini"></input>
+                <p className="label">Название программного продукта</p>
+                <input id="softwareName" className="input-mini"></input>
+                <p className="label">E-mail</p>
+                <input id="emailText" type="email" placeholder="@" className="input-mini"></input>
+                <p className="label">Текст заявки</p>
+                <textarea id="textArea"
+                    className="input-max"
+                    placeholder="Укажите свои поженалия и предпочтения."
+                ></textarea>
+                <div className="submit-block">
+                    <Recaptcha
+                        sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"
+                        theme="dark"
+                        render="explicit"
+                        ref={e => recaptchaInstance = e}
+                        verifyCallback={verifyCallback}
+                        expiredCallback={verifyCallback}
+                        onloadCallback={() => { try { recaptchaInstance.reset() } catch(ex){ }}}
+                    />
+                    <button id="btnSubHome" onClick={this.Submit} className="input-button">Отправить</button>
+                </div>
+            </div>
+            )
+    }
+
+    render() {
+        let content = this.state.answer == "Спасибо за ваш отзыв!" ? <p><em>{this.state.answer.toString()}</em></p> : this.renderForm() 
         return (
             <div className="parallax__group">
                 <div className="home-deep-back parallax__layer parallax__layer--deep_Home"></div>
@@ -55,28 +90,7 @@ export class Home extends Component {
                 </div>
                 <div className="form-home parallax__layer parallax__layer--base">
                     <h2>Создание заявки</h2>
-                    <div className="form-submit">
-                        <p className="label">Название организации</p>
-                        <input id="name" className="input-mini"></input>
-                        <p className="label">Название программного продукта</p>
-                        <input id="softwareName" className="input-mini"></input>
-                        <p className="label">E-mail</p>
-                        <input id="emailText" type="email" placeholder="@" className="input-mini"></input>
-                        <p className="label">Текст заявки</p>
-                        <textarea id="textArea"
-                            className="input-max"
-                            placeholder="Укажите свои поженалия и предпочтения."
-                        ></textarea>
-                        <div className="submit-block">
-                            <Recaptcha
-                                sitekey="6LcBzb8UAAAAAGj9mYgrh59bWrbZzhdXA9oMVCm5"
-                                theme="dark"
-                                verifyCallback={verifyCallback}
-                                expiredCallback={verifyCallback}
-                            />
-                            <button id="btnSubHome" onClick={this.Submit} className="input-button">Отправить</button>
-                        </div>
-                    </div>
+                    {content}
                 </div>
             </div>
         );

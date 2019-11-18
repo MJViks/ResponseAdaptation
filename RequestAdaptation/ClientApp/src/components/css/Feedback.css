@@ -13,3 +13,7 @@
     height: 101vh;
     color: black;
 }
+#g-recaptcha {
+    display: flex;
+    align-items: center;
+}

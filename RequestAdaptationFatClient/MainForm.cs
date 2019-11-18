@@ -123,13 +123,13 @@ namespace RequestAdaptationFatClient
             
         }
 
-    
-
-        private void CreateForm(string formName, BindingSource bindSource)
+        
+      
+            private void CreateForm(string formName, BindingSource bindSource)
         {
             Form childForm = new Form();
             childForm.MdiParent = this;
-            childForm.Width = 400;
+            childForm.Width = 450;
             childForm.Height = 300;
             childForm.Text = formName;
 
@@ -146,6 +146,7 @@ namespace RequestAdaptationFatClient
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGrid.SelectionChanged += new EventHandler(SelectCells);
             Button btnSave = new Button();
             btnSave.Parent = childForm;
             btnSave.Height = 30;
@@ -171,19 +172,58 @@ namespace RequestAdaptationFatClient
             btnOpenChild.Text = "Открыть дочерние таблицы";
             btnOpenChild.Click += new EventHandler(OpenChildTable);
             }
+            if(formName == "Клиенты")
+            {
+                Button btnSendMail = new Button();
+                btnSendMail.Parent = childForm;
+                btnSendMail.Height = 30;
+                btnSendMail.Width = 120;
+                btnSendMail.Top = 220;
+                btnSendMail.Left = 340;
+                btnSendMail.Anchor = ((AnchorStyles)((AnchorStyles.Bottom | AnchorStyles.Left)));
+                btnSendMail.Text = "Рассылка";
+                btnSendMail.Click += new EventHandler(btnEmailSendClick);
+            }
             childForm.Show();
 
             DBConnect.FillTableBinding();
         }
+        private void btnEmailSendClick(object sender, EventArgs e)
+        {
+            try
+            {
+                List<string> ToList = new List<string>();
+                if (selCells.Count > 0)
+                {
+                    for (int i = 0; i < selCells.Count; i++)
+                        ToList.Add(selCells[i].Cells[2].Value.ToString());
+                    Form EmailForm = new SendEmailForm(ToList);
+                    EmailForm.MdiParent = this;
+                    EmailForm.Show();
+                }
+                else
+                    MessageBox.Show("Выберете минимум одного клиента!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private static DataGridViewSelectedRowCollection selCells;
+
+        private void SelectCells(object sender, EventArgs e)
+        {
+            selCells = (sender as DataGridView).SelectedRows;
+        }
+
         private void SaveDataTable(object sender, EventArgs e)
         {
             string tableName = (sender as Button).Parent.Text;
             switch (tableName)
             {
                 case "Отзывы":
-
                     DBConnect.UpdateFeedbackAdapter();
-
                     break;
                 case "Сотрудники":
                     DBConnect.UpdateEmployeeAdapter();

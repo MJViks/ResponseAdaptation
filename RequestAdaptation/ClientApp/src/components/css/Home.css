@@ -109,9 +109,7 @@ h2 {
     flex-wrap: wrap;
     max-width: 700px;
 }
-.g-recaptcha {
-    margin: 10px;
-}
+
 
 .input-button {
     border-style: none;

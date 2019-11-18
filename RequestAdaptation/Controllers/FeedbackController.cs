@@ -22,7 +22,13 @@ namespace RequestAdaptation.Controllers
                 return "Одно или несколько полей не заполнены!";
             else
             {
-
+                Action ac = async() =>
+                {
+                    EMailClient emailService = new EMailClient();
+                    await emailService.SendEmailAsync("RequestAdaptation@yandex.ru", "Отзыв от " + value.Name, value.Text);
+                };
+                ac.Invoke();
+                
                 return DBActions.Feedback_Insert(value.Text, value.Software, value.Name, value.Email);
             }
         }
