@@ -6,9 +6,9 @@ export class Home extends Component {
         super(props);
         this.state = {
             capch: false,
-            answer: "",
+            answer: ""
             };
-    };
+    }
     Submit = () => {
         if (this.state.capch) {
             const data = {
@@ -27,7 +27,7 @@ export class Home extends Component {
             }).then(request => request.text()).
                 then(answ => {
                     this.setState({ answer: answ });
-                    alert(answ)
+                    alert(answ);
                 });
         } catch (error) {
             console.error('Ошибка:', error);
@@ -36,9 +36,9 @@ export class Home extends Component {
     };
 
     renderForm() {
-        var Recaptcha = require('react-recaptcha');
+        const Recaptcha = require('react-recaptcha');
         let recaptchaInstance;
-        var verifyCallback = () => {
+        const verifyCallback = () => {
             this.setState({ capch: true });
             document.getElementById('btnSubHome').style.backgroundColor = "#409fff";
          
@@ -64,16 +64,21 @@ export class Home extends Component {
                         ref={e => recaptchaInstance = e}
                         verifyCallback={verifyCallback}
                         expiredCallback={verifyCallback}
-                        onloadCallback={() => { try { recaptchaInstance.reset() } catch(ex){ }}}
+                        onloadCallback={() => {
+                            try {
+                                recaptchaInstance.reset();
+                            } catch (ex) {
+                            }
+                        }}
                     />
                     <button id="btnSubHome" onClick={this.Submit} className="input-button">Отправить</button>
                 </div>
             </div>
-            )
+        );
     }
 
     render() {
-        let content = this.state.answer == "Спасибо за ваш отзыв!" ? <p><em>{this.state.answer.toString()}</em></p> : this.renderForm() 
+        const content = this.state.answer === "Заявка успешно отправлена!" ? <p><em>{this.state.answer.toString()}</em></p> : this.renderForm(); 
         return (
             <div className="parallax__group">
                 <div className="home-deep-back parallax__layer parallax__layer--deep_Home"></div>

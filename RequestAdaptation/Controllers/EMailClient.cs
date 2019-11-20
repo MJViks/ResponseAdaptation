@@ -1,6 +1,7 @@
 ﻿using MimeKit;
 using MailKit.Net.Smtp;
 using System.Threading.Tasks;
+using MailKit.Security;
 
 namespace RequestAdaptation.Controllers
 {
@@ -20,7 +21,10 @@ namespace RequestAdaptation.Controllers
 
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync("smtp.yandex.ru", 465, true);
+                client.CheckCertificateRevocation = false;
+                await client.ConnectAsync("smtp.yandex.ru", 465, SecureSocketOptions.Auto);
+                client.ServerCertificateValidationCallback = (mysender, certificate, chain, sslPolicyErrors) => { return true; };
+                client.CheckCertificateRevocation = false;
                 await client.AuthenticateAsync("RequestAdaptation", "Pvj4B7.Kf-J9a.Z");
                 await client.SendAsync(emailMessage);
                 await client.DisconnectAsync(true);

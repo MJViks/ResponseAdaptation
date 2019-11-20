@@ -9,7 +9,7 @@ using RequestAdaptation.Models;
 namespace RequestAdaptation.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    //[ApiController]
     public class FeedbackController : Controller
     {
         [HttpPost]
@@ -20,17 +20,14 @@ namespace RequestAdaptation.Controllers
                 value.Name == string.Empty ||
                 value.Software == string.Empty)
                 return "Одно или несколько полей не заполнены!";
-            else
+            Action ac = async() =>
             {
-                Action ac = async() =>
-                {
-                    EMailClient emailService = new EMailClient();
-                    await emailService.SendEmailAsync("RequestAdaptation@yandex.ru", "Отзыв от " + value.Name, value.Text);
-                };
-                ac.Invoke();
+                EMailClient emailService = new EMailClient();
+                await emailService.SendEmailAsync("RequestAdaptation@yandex.ru", "Отзыв от " + value.Name, value.Text);
+            };
+            ac.Invoke();
                 
-                return DBActions.Feedback_Insert(value.Text, value.Software, value.Name, value.Email);
-            }
+            return DBActions.Feedback_Insert(value.Text, value.Software, value.Name, value.Email);
         }
     }
 }

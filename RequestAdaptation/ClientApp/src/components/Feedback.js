@@ -8,7 +8,7 @@ export class Feedback extends Component {
             capch: false,
             answer: "",
         };
-    };
+    }
 
     Submit = () => {
         if (this.state.capch) {

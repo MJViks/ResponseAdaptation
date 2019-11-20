@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestAdaptation", "Reques
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestAdaptationFatClient", "RequestAdaptationFatClient\RequestAdaptationFatClient.csproj", "{1E0DA654-010F-4A23-BC84-FB98E6CD0EF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestAdaptation.Tests", "RequestAdaptation.Tests\RequestAdaptation.Tests.csproj", "{3E480B36-24C0-495E-9F4B-EA44CAF6008C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E0DA654-010F-4A23-BC84-FB98E6CD0EF8} = {1E0DA654-010F-4A23-BC84-FB98E6CD0EF8}
+		{FAE82C8D-6CF8-40D6-8D67-3A9A46F1A57F} = {FAE82C8D-6CF8-40D6-8D67-3A9A46F1A57F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,10 @@ Global
 		{1E0DA654-010F-4A23-BC84-FB98E6CD0EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E0DA654-010F-4A23-BC84-FB98E6CD0EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E0DA654-010F-4A23-BC84-FB98E6CD0EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E480B36-24C0-495E-9F4B-EA44CAF6008C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E480B36-24C0-495E-9F4B-EA44CAF6008C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E480B36-24C0-495E-9F4B-EA44CAF6008C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E480B36-24C0-495E-9F4B-EA44CAF6008C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
