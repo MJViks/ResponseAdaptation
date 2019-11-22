@@ -2,18 +2,25 @@
 }
 .parallax__layer--deep_Feedback {
     top: 0;
+    -ms-transform: translateZ(-2px) scale(3);
+    -webkit-transform: translateZ(-2px) scale(3);
     transform: translateZ(-2px) scale(3);
     background-image: url(../img/mountains_2.jpg);
     color: white;
+    -ms-background-repeat: no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 }
+
 .form-feedback {
     height: 101vh;
     color: black;
 }
 #g-recaptcha {
     display: flex;
+    -ms-align-items: center;
+    -o-align-items: center;
+    -webkit-align-items: center;
     align-items: center;
 }
