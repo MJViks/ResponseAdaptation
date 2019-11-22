@@ -15,6 +15,6 @@ namespace RequestAdaptation.Tests
             string actual = Crypt.GetHash(password);
             Assert.Equal(expected, actual);
         }
-
     }
+
 }
